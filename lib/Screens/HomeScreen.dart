@@ -9,7 +9,6 @@ import 'package:takeurs_userapp/widgets/OfferNearMe.dart';
 import 'package:takeurs_userapp/widgets/TopDeals.dart';
 import 'package:takeurs_userapp/widgets/TopOffers.dart';
 import 'package:takeurs_userapp/widgets/Upcoming.dart';
-
 import '../utlis_color/utlis_color.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -32,18 +31,6 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.white,
-      bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: AppColors.white,
-          selectedItemColor: AppColors.primaryColor,
-          //   currentIndex: _currentIndex,
-          items: const [
-            BottomNavigationBarItem(
-                icon: Icon(Icons.home_outlined), label: "Home"),
-            BottomNavigationBarItem(
-                icon: Icon(CupertinoIcons.heart), label: "Favourite"),
-            BottomNavigationBarItem(
-                icon: Icon(CupertinoIcons.person), label: "Profile"),
-          ]),
       appBar: AppBar(
         backgroundColor: AppColors.white,
         elevation: 0,
@@ -71,8 +58,9 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       body: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
         child: Padding(
-          padding: const EdgeInsets.all(20.0),
+          padding: const EdgeInsets.all(16.0),
           child: Column(
             children: [
               TextFormField(
@@ -178,8 +166,7 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(
                 height: 8,
               ),
-              
-              
+
               // offers near me
               const Text(
                 "Offers nearby",
@@ -206,7 +193,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       Row(children: [
                         CircleAvatar(
                           backgroundColor: Color(0xFFFF61A8),
-                          backgroundImage: AssetImage("assets/svg_icons/image 17.png"),
+                          backgroundImage:
+                              AssetImage("assets/svg_icons/image 17.png"),
                           radius: 31,
                         ),
                         SizedBox(
@@ -214,7 +202,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         CircleAvatar(
                           backgroundColor: Colors.grey,
-                          backgroundImage: AssetImage("assets/svg_icons/image 15.png"),
+                          backgroundImage:
+                              AssetImage("assets/svg_icons/image 15.png"),
                           radius: 31,
                         ),
                         SizedBox(
@@ -222,7 +211,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         CircleAvatar(
                           backgroundColor: Color(0xFFFF61A8),
-                          backgroundImage: AssetImage("assets/svg_icons/image 14.png"),
+                          backgroundImage:
+                              AssetImage("assets/svg_icons/image 14.png"),
                           radius: 31,
                         ),
                         SizedBox(
@@ -230,7 +220,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         CircleAvatar(
                           backgroundColor: Colors.grey,
-                          backgroundImage: AssetImage("assets/svg_icons/image 16.png"),
+                          backgroundImage:
+                              AssetImage("assets/svg_icons/image 16.png"),
                           radius: 31,
                         ),
                       ]),
@@ -245,7 +236,6 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               const TopDeals(),
 
-
               // top offers
               const SizedBox(
                 height: 24,
@@ -254,14 +244,14 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(
                 height: 8,
               ),
-             const TopOffers(),
-             const SizedBox(
+              const TopOffers(),
+              const SizedBox(
                 height: 8,
               ),
               const BigOne(),
               //upcoming deals
               const Text("Upcoming Deals", style: TextStyle(fontSize: 24)),
-               const SizedBox(
+              const SizedBox(
                 height: 8,
               ),
               const Upcoming(),
