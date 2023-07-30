@@ -1,3 +1,5 @@
+// ignore_for_file: unused_field
+
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/cupertino.dart';
@@ -19,12 +21,21 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  int _colorIndex = 0;
+
   int _currentIndex = 0;
   final List<String> _imageUrls = [
     'assets/svg_icons/image 9.png',
     'assets/svg_icons/image 9.png',
     'assets/svg_icons/image 9.png',
     'assets/svg_icons/image 9.png',
+  ];
+
+  final List<String> _brandNearbyList = [
+    'assets/svg_icons/image 14.png',
+    'assets/svg_icons/image 15.png',
+    'assets/svg_icons/image 16.png',
+    'assets/svg_icons/image 17.png',
   ];
 
   @override
@@ -58,8 +69,8 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       body: SingleChildScrollView(
-        physics: const BouncingScrollPhysics(),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Padding(
               padding: const EdgeInsets.all(14.0),
@@ -190,53 +201,43 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             // brands near by
             Padding(
-              padding: const EdgeInsets.only(left:24),
+              padding: const EdgeInsets.only(left: 24),
               child: Container(
                 color: AppColors.white,
-                child: const Column(
+                child: Column(
                   children: [
-                    Text(
+                    const Text(
                       "Brands nearby",
                       style: TextStyle(fontSize: 24),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 14,
                     ),
-                    Row(children: [
-                      CircleAvatar(
-                        backgroundColor: Color(0xFFFF61A8),
-                        backgroundImage:
-                            AssetImage("assets/svg_icons/image 17.png"),
-                        radius: 31,
-                      ),
-                      SizedBox(
-                        width: 36,
-                      ),
-                      CircleAvatar(
-                        backgroundColor: Colors.grey,
-                        backgroundImage:
-                            AssetImage("assets/svg_icons/image 15.png"),
-                        radius: 31,
-                      ),
-                      SizedBox(
-                        width: 36,
-                      ),
-                      CircleAvatar(
-                        backgroundColor: Color(0xFFFF61A8),
-                        backgroundImage:
-                            AssetImage("assets/svg_icons/image 14.png"),
-                        radius: 31,
-                      ),
-                      SizedBox(
-                        width: 36,
-                      ),
-                      CircleAvatar(
-                        backgroundColor: Colors.grey,
-                        backgroundImage:
-                            AssetImage("assets/svg_icons/image 16.png"),
-                        radius: 31,
-                      ),
-                    ]),
+                    SizedBox(
+                      height: 60,
+                      child: ListView.builder(
+                          shrinkWrap: true,
+                          physics: const AlwaysScrollableScrollPhysics(),
+                          scrollDirection: Axis.horizontal,
+                          itemCount: _brandNearbyList.length,
+                          itemBuilder: (context, index) {
+                            return Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                CircleAvatar(
+                                  radius: 40,
+                                  backgroundColor: _colorIndex == 0
+                                      ? AppColors.litPink.withAlpha(40)
+                                      : AppColors.litPurple.withAlpha(20),
+                                  child: Image.asset(_brandNearbyList[index]),
+                                ),
+                                const SizedBox(
+                                  width: 12,
+                                )
+                              ],
+                            );
+                          }),
+                    ),
                   ],
                 ),
               ),

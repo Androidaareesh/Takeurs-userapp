@@ -19,7 +19,7 @@ class _CategoriesState extends State<Categories> {
             padding: const EdgeInsets.only(left: 12),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Column(
                   children: [
@@ -27,7 +27,7 @@ class _CategoriesState extends State<Categories> {
                     const Text("Health")
                   ],
                 ),
-               const SizedBox(
+                const SizedBox(
                   width: 16,
                 ),
                 Column(
@@ -41,7 +41,7 @@ class _CategoriesState extends State<Categories> {
                 ),
                 Column(
                   children: [
-                     Image.asset("assets/svg_icons/milk.png"),
+                    Image.asset("assets/svg_icons/milk.png"),
                     const Text("Groceries")
                   ],
                 ),
@@ -50,7 +50,7 @@ class _CategoriesState extends State<Categories> {
                 ),
                 Column(
                   children: [
-                     Image.asset("assets/svg_icons/shop.png"),
+                    Image.asset("assets/svg_icons/shop.png"),
                     const Text("Super Market")
                   ],
                 ),
@@ -62,7 +62,7 @@ class _CategoriesState extends State<Categories> {
           ),
           // second row
           Padding(
-            padding: const EdgeInsets.only(left:12),
+            padding: const EdgeInsets.only(left: 12),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -70,7 +70,7 @@ class _CategoriesState extends State<Categories> {
               children: [
                 Column(
                   children: [
-                     Image.asset("assets/svg_icons/chip.png"),
+                    Image.asset("assets/svg_icons/chip.png"),
                     const Text("Hardware")
                   ],
                 ),
@@ -79,11 +79,11 @@ class _CategoriesState extends State<Categories> {
                 ),
                 Column(
                   children: [
-                     Image.asset("assets/svg_icons/food.png"),
+                    Image.asset("assets/svg_icons/food.png"),
                     const Text("Restaurants")
                   ],
                 ),
-               const SizedBox(
+                const SizedBox(
                   width: 16,
                 ),
                 Column(
@@ -92,12 +92,12 @@ class _CategoriesState extends State<Categories> {
                     const Text("Green Fresh")
                   ],
                 ),
-               const SizedBox(
+                const SizedBox(
                   width: 16,
                 ),
                 Column(
                   children: [
-                     Image.asset("assets/svg_icons/comb.png"),
+                    Image.asset("assets/svg_icons/comb.png"),
                     const Text("Saloon")
                   ],
                 ),
