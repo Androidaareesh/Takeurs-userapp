@@ -18,30 +18,26 @@ class _TopOffersState extends State<TopOffers> {
     'assets/svg_icons/flip.png',
     'assets/svg_icons/flip.png',
     'assets/svg_icons/flip.png'
-    
   ];
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-          CarouselSlider(
+        CarouselSlider(
           items: _imageUrls.map((url) {
-            return Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8.0),
-              child: Container(
-                decoration: BoxDecoration(
-                    color: AppColors.white,
-                    borderRadius: BorderRadius.circular(8)),
-                child: Image.asset(
-                  url,
-                  fit: BoxFit.fill,
-                ),
+            return Container(
+              decoration: BoxDecoration(
+                  color: AppColors.white,
+                  borderRadius: BorderRadius.circular(8)),
+              child: Image.asset(
+                url,
+                fit: BoxFit.fill,
               ),
             );
           }).toList(),
           options: CarouselOptions(
-            height: 171.0,
-            viewportFraction: 1,
+            height: 170.0,
+            viewportFraction: 0.86,
             autoPlay: true,
             enlargeCenterPage: false,
             onPageChanged: (index, reason) {

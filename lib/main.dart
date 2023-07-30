@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:takeurs_userapp/Screens/BottomNavigation.dart';
-import 'package:takeurs_userapp/Screens/HomeScreen.dart';
 
 void main() {
   runApp(const MyApp());

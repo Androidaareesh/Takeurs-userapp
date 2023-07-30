@@ -23,24 +23,22 @@ class _BigOneState extends State<BigOne> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-         CarouselSlider(
+        CarouselSlider(
           items: _imageUrls.map((url) {
-            return Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8.0),
-              child: Container(
-                decoration: BoxDecoration(
-                    color: AppColors.white,
-                    borderRadius: BorderRadius.circular(8)),
-                child: Image.asset(
-                  url,
-                  fit: BoxFit.fill,
-                ),
+            return Container(
+              padding: EdgeInsets.symmetric(horizontal: 4),
+              decoration: BoxDecoration(
+                  color: AppColors.white,
+                  borderRadius: BorderRadius.circular(8)),
+              child: Image.asset(
+                url,
+                fit: BoxFit.fill,
               ),
             );
           }).toList(),
           options: CarouselOptions(
-            height:328.0,
-            viewportFraction: 1,
+            height: 320.0,
+            viewportFraction: 0.88,
             autoPlay: true,
             enlargeCenterPage: false,
             onPageChanged: (index, reason) {
@@ -51,14 +49,14 @@ class _BigOneState extends State<BigOne> {
           ),
         ),
         const SizedBox(
-          height: 10,
+          height: 12,
         ),
         DotsIndicator(
           dotsCount: _imageUrls.length,
           position: _currentIndex,
           decorator: DotsDecorator(
             spacing: const EdgeInsets.all(2),
-            activeColor:AppColors.primaryColor,
+            activeColor: AppColors.primaryColor,
             color: AppColors.grey,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(2.0),

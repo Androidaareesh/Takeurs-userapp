@@ -21,12 +21,12 @@ class _UpcomingState extends State<Upcoming> {
   ];
   @override
   Widget build(BuildContext context) {
-    return  Column(
+    return Column(
       children: [
         CarouselSlider(
           items: _imageUrls.map((url) {
             return Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              padding: const EdgeInsets.symmetric(horizontal: 4.0),
               child: Container(
                 decoration: BoxDecoration(
                     color: AppColors.white,
@@ -40,7 +40,7 @@ class _UpcomingState extends State<Upcoming> {
           }).toList(),
           options: CarouselOptions(
             height: 107.0,
-            viewportFraction: 1,
+            viewportFraction: 0.8,
             autoPlay: true,
             enlargeCenterPage: false,
             onPageChanged: (index, reason) {
@@ -50,7 +50,6 @@ class _UpcomingState extends State<Upcoming> {
             },
           ),
         ),
-        
       ],
     );
   }
