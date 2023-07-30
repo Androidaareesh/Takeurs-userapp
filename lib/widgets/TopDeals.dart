@@ -22,21 +22,18 @@ class _TopDealsState extends State<TopDeals> {
   Widget build(BuildContext context) {
     return CarouselSlider(
       items: _imageUrls.map((url) {
-        return Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 8.0),
-          child: Container(
-            decoration: BoxDecoration(
-                color: AppColors.white, borderRadius: BorderRadius.circular(8)),
-            child: Image.asset(
-              url,
-              fit: BoxFit.fill,
-            ),
+        return Container(
+          decoration: BoxDecoration(
+              color: AppColors.white, borderRadius: BorderRadius.circular(8)),
+          child: Image.asset(
+            url,
+            fit: BoxFit.fill,
           ),
         );
       }).toList(),
       options: CarouselOptions(
-        height: 107.0,
-        viewportFraction: 1,
+        height: 108.0,
+        viewportFraction: 0.8,
         autoPlay: true,
         enlargeCenterPage: false,
         onPageChanged: (index, reason) {

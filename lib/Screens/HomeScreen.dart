@@ -58,12 +58,12 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       body: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            children: [
-              TextFormField(
+        physics: const BouncingScrollPhysics(),
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(14.0),
+              child: TextFormField(
                 cursorColor: AppColors.primaryColor,
                 decoration: InputDecoration(
                   prefixIcon: const Icon(
@@ -83,180 +83,220 @@ class _HomeScreenState extends State<HomeScreen> {
                       borderSide: const BorderSide(color: AppColors.grey)),
                 ),
               ),
-              const SizedBox(
-                height: 14,
+            ),
+
+            CarouselSlider(
+              items: _imageUrls.map((url) {
+                return Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: AppColors.white,
+                        borderRadius: BorderRadius.circular(8)),
+                    child: Image.asset(
+                      url,
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                );
+              }).toList(),
+              options: CarouselOptions(
+                height: 200.0,
+                viewportFraction: 1,
+                autoPlay: true,
+                enlargeCenterPage: false,
+                onPageChanged: (index, reason) {
+                  setState(() {
+                    _currentIndex = index;
+                  });
+                },
               ),
-              CarouselSlider(
-                items: _imageUrls.map((url) {
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                    child: Container(
-                      decoration: BoxDecoration(
-                          color: AppColors.white,
-                          borderRadius: BorderRadius.circular(8)),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            DotsIndicator(
+              dotsCount: _imageUrls.length,
+              position: _currentIndex,
+              decorator: DotsDecorator(
+                spacing: const EdgeInsets.all(2),
+                activeColor: AppColors.primaryColor,
+                color: AppColors.grey,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(2.0),
+                ),
+                activeShape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(2.0),
+                ),
+                size: const Size(22.0, 4.0), // Adjust the size of the line here
+                activeSize: const Size(
+                    48.0, 4.0), // Adjust the size of the active line here
+              ),
+            ),
+            const SizedBox(
+              height: 14,
+            ),
+            // code for category area
+            const Text("Shops by Categories", style: TextStyle(fontSize: 24)),
+            const SizedBox(
+              height: 24,
+            ),
+            const Categories(),
+            //best deals
+            const SizedBox(
+              height: 24,
+            ),
+
+            // best deals
+            Container(
+              color: AppColors.white,
+              child: Column(children: [
+                const Text(
+                  "Best Deals in city ",
+                  style: TextStyle(fontSize: 24),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(
+                      bottom: 8.0, left: 14, right: 14, top: 10),
+                  child: Card(
+                    elevation: 2,
+                    shadowColor: Colors.pinkAccent,
+                    surfaceTintColor: Colors.pink,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(12),
                       child: Image.asset(
-                        url,
-                        fit: BoxFit.fill,
+                        "assets/svg_icons/bestdeal.png",
                       ),
                     ),
-                  );
-                }).toList(),
-                options: CarouselOptions(
-                  height: 200.0,
-                  viewportFraction: 1,
-                  autoPlay: true,
-                  enlargeCenterPage: false,
-                  onPageChanged: (index, reason) {
-                    setState(() {
-                      _currentIndex = index;
-                    });
-                  },
-                ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              DotsIndicator(
-                dotsCount: _imageUrls.length,
-                position: _currentIndex,
-                decorator: DotsDecorator(
-                  spacing: const EdgeInsets.all(2),
-                  activeColor: AppColors.primaryColor,
-                  color: AppColors.grey,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(2.0),
                   ),
-                  activeShape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(2.0),
-                  ),
-                  size:
-                      const Size(22.0, 4.0), // Adjust the size of the line here
-                  activeSize: const Size(
-                      48.0, 4.0), // Adjust the size of the active line here
                 ),
-              ),
-              const SizedBox(
-                height: 14,
-              ),
-              // code for category area
-              const Text("Shops by Categories", style: TextStyle(fontSize: 24)),
-              const SizedBox(
-                height: 24,
-              ),
-              const Categories(),
-              //best deals
-              const SizedBox(
-                height: 24,
-              ),
+              ]),
+            ),
+            const SizedBox(
+              height: 8,
+            ),
 
-              // best deals
-              Container(
+            // offers near me
+            const Text(
+              "Offers nearby",
+              style: TextStyle(fontSize: 24),
+            ),
+            const SizedBox(
+              height: 8,
+            ),
+            const OffersNearMe(),
+            const SizedBox(
+              height: 24,
+            ),
+            // brands near by
+            Padding(
+              padding: const EdgeInsets.only(left:24),
+              child: Container(
                 color: AppColors.white,
-                child: Column(children: [
-                  const Text(
-                    "Best Deals in city ",
-                    style: TextStyle(fontSize: 24),
-                  ),
-                  const SizedBox(
+                child: const Column(
+                  children: [
+                    Text(
+                      "Brands nearby",
+                      style: TextStyle(fontSize: 24),
+                    ),
+                    SizedBox(
+                      height: 14,
+                    ),
+                    Row(children: [
+                      CircleAvatar(
+                        backgroundColor: Color(0xFFFF61A8),
+                        backgroundImage:
+                            AssetImage("assets/svg_icons/image 17.png"),
+                        radius: 31,
+                      ),
+                      SizedBox(
+                        width: 36,
+                      ),
+                      CircleAvatar(
+                        backgroundColor: Colors.grey,
+                        backgroundImage:
+                            AssetImage("assets/svg_icons/image 15.png"),
+                        radius: 31,
+                      ),
+                      SizedBox(
+                        width: 36,
+                      ),
+                      CircleAvatar(
+                        backgroundColor: Color(0xFFFF61A8),
+                        backgroundImage:
+                            AssetImage("assets/svg_icons/image 14.png"),
+                        radius: 31,
+                      ),
+                      SizedBox(
+                        width: 36,
+                      ),
+                      CircleAvatar(
+                        backgroundColor: Colors.grey,
+                        backgroundImage:
+                            AssetImage("assets/svg_icons/image 16.png"),
+                        radius: 31,
+                      ),
+                    ]),
+                  ],
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 12,
+            ),
+            //top deals
+            Container(
+              padding: const EdgeInsets.only(top: 8, bottom: 8),
+              color: AppColors.grey,
+              child: const Column(
+                children: [
+                  Text("Top Deals", style: TextStyle(fontSize: 24)),
+                  SizedBox(
                     height: 8,
                   ),
-                  Image.asset("assets/svg_icons/bestdeal.png"),
-                ]),
-              ),
-              const SizedBox(
-                height: 8,
-              ),
+                  TopDeals(),
 
-              // offers near me
-              const Text(
-                "Offers nearby",
-                style: TextStyle(fontSize: 24),
-              ),
-              const SizedBox(
-                height: 8,
-              ),
-              const OffersNearMe(),
-              const SizedBox(
-                height: 24,
-              ),
-              // brands near by
-              Padding(
-                padding: const EdgeInsets.all(7.0),
-                child: Container(
-                  color: AppColors.white,
-                  child: const Column(
-                    children: [
-                      Text(
-                        "Brands nearby",
-                        style: TextStyle(fontSize: 24),
-                      ),
-                      Row(children: [
-                        CircleAvatar(
-                          backgroundColor: Color(0xFFFF61A8),
-                          backgroundImage:
-                              AssetImage("assets/svg_icons/image 17.png"),
-                          radius: 31,
-                        ),
-                        SizedBox(
-                          width: 36,
-                        ),
-                        CircleAvatar(
-                          backgroundColor: Colors.grey,
-                          backgroundImage:
-                              AssetImage("assets/svg_icons/image 15.png"),
-                          radius: 31,
-                        ),
-                        SizedBox(
-                          width: 36,
-                        ),
-                        CircleAvatar(
-                          backgroundColor: Color(0xFFFF61A8),
-                          backgroundImage:
-                              AssetImage("assets/svg_icons/image 14.png"),
-                          radius: 31,
-                        ),
-                        SizedBox(
-                          width: 36,
-                        ),
-                        CircleAvatar(
-                          backgroundColor: Colors.grey,
-                          backgroundImage:
-                              AssetImage("assets/svg_icons/image 16.png"),
-                          radius: 31,
-                        ),
-                      ]),
-                    ],
+                  // top offers
+                  SizedBox(
+                    height: 24,
                   ),
-                ),
+                ],
               ),
-              //top deals
-              const Text("Top Deals", style: TextStyle(fontSize: 24)),
-              const SizedBox(
-                height: 8,
+            ),
+            const SizedBox(
+              height: 12,
+            ),
+            const Text("Top Offers", style: TextStyle(fontSize: 24)),
+            const SizedBox(
+              height: 12,
+            ),
+            const TopOffers(),
+            const SizedBox(
+              height: 14,
+            ),
+            const BigOne(),
+            const SizedBox(
+              height: 14,
+            ),
+            Container(
+              color: Colors.pink.shade50,
+              child: const Column(
+                children: [
+                  SizedBox(
+                    height: 12,
+                  ),
+                  Text("Upcoming Deals", style: TextStyle(fontSize: 24)),
+                  SizedBox(
+                    height: 12,
+                  ),
+                  Upcoming(),
+                  SizedBox(
+                    height: 20,
+                  ),
+                ],
               ),
-              const TopDeals(),
-
-              // top offers
-              const SizedBox(
-                height: 24,
-              ),
-              const Text("Top Offers", style: TextStyle(fontSize: 24)),
-              const SizedBox(
-                height: 8,
-              ),
-              const TopOffers(),
-              const SizedBox(
-                height: 8,
-              ),
-              const BigOne(),
-              //upcoming deals
-              const Text("Upcoming Deals", style: TextStyle(fontSize: 24)),
-              const SizedBox(
-                height: 8,
-              ),
-              const Upcoming(),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
