@@ -8,55 +8,61 @@ class Categories extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Column(
         children: [
-          GridView.count(crossAxisCount: 4,
-           childAspectRatio: .90,
-           crossAxisSpacing: 20,
-           mainAxisSpacing: 20,
-          children:  [
-            ShopCategory(categoryIcon: 'assets/svg_icons/health.svg', categoryName: 'health',press: (){},),
-                 ShopCategory(
-              categoryIcon: 'assets/svg_icons/health.svg',
-              categoryName: 'health',
-              press: () {},
-            ),
-                 ShopCategory(
-              categoryIcon: 'assets/svg_icons/health.svg',
-              categoryName: 'health',
-              press: () {},
-            ),
-                 ShopCategory(
-              categoryIcon: 'assets/svg_icons/health.svg',
-              categoryName: 'health',
-              press: () {},
-            ),
-                 ShopCategory(
-              categoryIcon: 'assets/svg_icons/health.svg',
-              categoryName: 'health',
-              press: () {},
-            ),
-                 ShopCategory(
-              categoryIcon: 'assets/svg_icons/health.svg',
-              categoryName: 'health',
-              press: () {},
-            ),
-                 ShopCategory(
-              categoryIcon: 'assets/svg_icons/health.svg',
-              categoryName: 'health',
-              press: () {},
-            ),
-                 ShopCategory(
-              categoryIcon: 'assets/svg_icons/health.svg',
-              categoryName: 'health',
-              press: () {},
-            ),
-                 ShopCategory(
-              categoryIcon: 'assets/svg_icons/health.svg',
-              categoryName: 'health',
-              press: () {},
-            )
-          ],),
-          
+          SizedBox(
+            height: 60,
+            child: GridView.count(crossAxisCount: 4,
+             childAspectRatio: .90,
+             crossAxisSpacing: 20,
+             mainAxisSpacing: 20,
+            children:  [
+              ShopCategory(categoryIcon: 'assets/svg_icons/health.png', categoryName: 'health',press: (){},),
+                   ShopCategory(
+                categoryIcon: 'assets/svg_icons/health.png',
+                categoryName: 'health',
+                press: () {},
+              ),
+                   ShopCategory(
+                categoryIcon: 'assets/svg_icons/health.png',
+                categoryName: 'health',
+                press: () {},
+              ),
+                   ShopCategory(
+                categoryIcon: 'assets/svg_icons/health.png',
+                categoryName: 'health',
+                press: () {},
+              ),
+                   ShopCategory(
+                categoryIcon: 'assets/svg_icons/health.png',
+                categoryName: 'health',
+                press: () {},
+              ),
+                   ShopCategory(
+                categoryIcon: 'assets/svg_icons/health.png',
+                categoryName: 'health',
+                press: () {},
+              ),
+                   ShopCategory(
+                categoryIcon: 'assets/svg_icons/health.png',
+                categoryName: 'health',
+                press: () {},
+              ),
+                   ShopCategory(
+                categoryIcon: 'assets/svg_icons/health.png',
+                categoryName: 'health',
+                press: () {},
+              ),
+                   ShopCategory(
+                categoryIcon: 'assets/svg_icons/health.png',
+                categoryName: 'health',
+                press: () {},
+              )
+            ],),
+          ),
+         
+
+         
         ],
     );
   }
 }
+

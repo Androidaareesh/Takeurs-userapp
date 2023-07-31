@@ -159,7 +159,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ],
             ),
-            //  const Categories(),
+              const Categories(),
 
             //best deals
             const SizedBox(
