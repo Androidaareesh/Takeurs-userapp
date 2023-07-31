@@ -1,7 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
-
 import '../utlis_color/utlis_color.dart';
 
 class TopOffers extends StatefulWidget {
