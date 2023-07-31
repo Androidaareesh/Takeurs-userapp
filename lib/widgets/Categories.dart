@@ -1,19 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:takeurs_userapp/models/shop_category_model.dart';
 
-class Categories extends StatefulWidget {
+class Categories extends StatelessWidget {
   const Categories({super.key});
 
   @override
-  State<Categories> createState() => _CategoriesState();
-}
-
-class _CategoriesState extends State<Categories> {
-  @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Column(
+    return  Column(
         children: [
           Padding(
             padding: const EdgeInsets.only(left: 12),
@@ -103,50 +97,8 @@ class _CategoriesState extends State<Categories> {
                 ),
               ],
             ),
-          ),
-
-          // third  row
-
-          // Row(
-          //   mainAxisAlignment: MainAxisAlignment.spaceAround,
-          //   children: [
-          //     Column(
-          //       children: [
-          //         SvgPicture.asset("assets/svg_icons/health.svg"),
-          //         const Text("Health")
-          //       ],
-          //     ),
-          //     const SizedBox(
-          //       height: 30,
-          //     ),
-          //     Column(
-          //       children: [
-          //         SvgPicture.asset("assets/svg_icons/health.svg"),
-          //         const Text("Health")
-          //       ],
-          //     ),
-          //     const SizedBox(
-          //       height: 24,
-          //     ),
-          //     Column(
-          //       children: [
-          //         SvgPicture.asset("assets/svg_icons/health.svg"),
-          //         const Text("Health")
-          //       ],
-          //     ),
-          //     const SizedBox(
-          //       height: 24,
-          //     ),
-          //     Column(
-          //       children: [
-          //         SvgPicture.asset("assets/svg_icons/health.svg"),
-          //         const Text("Health")
-          //       ],
-          //     ),
-          //   ],
-          // ),
-        ],
-      ),
+          )]
     );
   }
 }
+
