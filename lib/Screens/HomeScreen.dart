@@ -12,6 +12,7 @@ import 'package:takeurs_userapp/widgets/TopOffers.dart';
 import 'package:takeurs_userapp/widgets/Upcoming.dart';
 import '../utlis_color/utlis_color.dart';
 import '../widgets/Categories.dart';
+import '../widgets/custom_row_text.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -57,20 +58,18 @@ class _HomeScreenState extends State<HomeScreen> {
               TextSpan(
                   text: "Take",
                   style: TextStyle(
-                      color: AppColors.white,
-                      fontWeight: FontWeight.bold)),
+                      color: AppColors.white, fontWeight: FontWeight.bold)),
               TextSpan(
                   text: "urs",
                   style: TextStyle(
-                      color: AppColors.white,
-                      fontWeight: FontWeight.normal)),
+                      color: AppColors.white, fontWeight: FontWeight.normal)),
             ]))
           ],
         ),
       ),
       body: SingleChildScrollView(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+          //crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Padding(
               padding: const EdgeInsets.all(14.0),
@@ -148,12 +147,20 @@ class _HomeScreenState extends State<HomeScreen> {
               height: 14,
             ),
             // code for category area
-            const Text("Shops by Categories", style: TextStyle(fontSize: 24)),
-            const SizedBox(
-              height: 24,
+            //
+            // ignore: prefer_const_constructors
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                CustomText(
+                  button: 'See All >',
+                  text: 'Shops by Categories',
+                  press: () {},
+                ),
+              ],
             ),
-        //  const Categories(),
-            
+            //  const Categories(),
+
             //best deals
             const SizedBox(
               height: 24,
@@ -163,9 +170,16 @@ class _HomeScreenState extends State<HomeScreen> {
             Container(
               color: AppColors.white,
               child: Column(children: [
-                const Text(
-                  "Best Deals in city ",
-                  style: TextStyle(fontSize: 24),
+                
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    CustomText(
+                      button: 'See All >',
+                      text: 'Best Deals in city',
+                      press: () {},
+                    ),
+                  ],
                 ),
                 Padding(
                   padding: const EdgeInsets.only(
@@ -189,10 +203,18 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
 
             // offers near me
-            const Text(
-              "Offers nearby",
-              style: TextStyle(fontSize: 24),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                CustomText(
+                  button: 'See All >',
+                  text: 'Offers Nearby',
+                  press: () {},
+                ),
+              ],
             ),
+           
+            
             const SizedBox(
               height: 8,
             ),
@@ -207,10 +229,17 @@ class _HomeScreenState extends State<HomeScreen> {
                 color: AppColors.white,
                 child: Column(
                   children: [
-                    const Text(
-                      "Brands nearby",
-                      style: TextStyle(fontSize: 24),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        CustomText(
+                          button: 'See All >',
+                          text: 'brands Nearby',
+                          press: () {},
+                        ),
+                      ],
                     ),
+           
                     const SizedBox(
                       height: 14,
                     ),
@@ -229,7 +258,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   radius: 40,
                                   backgroundColor: _colorIndex == 0
                                       ? AppColors.litPink.withAlpha(40)
-                                      : AppColors.litPurple.withAlpha(20),
+                                      : AppColors.grey.withAlpha(20),
                                   child: Image.asset(_brandNearbyList[index]),
                                 ),
                                 const SizedBox(
@@ -250,16 +279,26 @@ class _HomeScreenState extends State<HomeScreen> {
             Container(
               padding: const EdgeInsets.only(top: 8, bottom: 8),
               color: AppColors.grey,
-              child: const Column(
+              child:  Column(
                 children: [
-                  Text("Top Deals", style: TextStyle(fontSize: 24)),
-                  SizedBox(
+                 Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      CustomText(
+                        button: 'See All >',
+                        text: 'Brands Nearby',
+                        press: () {},
+                      ),
+                    ],
+                  ),
+           
+                 const SizedBox(
                     height: 8,
                   ),
-                  TopDeals(),
+                  const TopDeals(),
 
                   // top offers
-                  SizedBox(
+                 const SizedBox(
                     height: 24,
                   ),
                 ],
@@ -268,7 +307,17 @@ class _HomeScreenState extends State<HomeScreen> {
             const SizedBox(
               height: 12,
             ),
-            const Text("Top Offers", style: TextStyle(fontSize: 24)),
+           Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                CustomText(
+                  button: 'See All >',
+                  text: 'Top Offers',
+                  press: () {},
+                ),
+              ],
+            ),
+           
             const SizedBox(
               height: 12,
             ),
@@ -282,12 +331,21 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             Container(
               color: Colors.pink.shade50,
-              child: const Column(
+              child:  Column(
                 children: [
-                  SizedBox(
+                const  SizedBox(
                     height: 12,
                   ),
-                  Text("Upcoming Deals", style: TextStyle(fontSize: 24)),
+                 Row(
+                    children: [
+                      CustomText(
+                        button: 'See All >',
+                        text: 'Upcoming Deals',
+                        press: () {},
+                      ),
+                    ],
+                  ),
+           
                   SizedBox(
                     height: 12,
                   ),

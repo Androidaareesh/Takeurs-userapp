@@ -54,7 +54,8 @@ class Categories extends StatelessWidget {
               categoryName: 'health',
               press: () {},
             )
-          ],)
+          ],),
+          
         ],
     );
   }
