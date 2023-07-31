@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:takeurs_userapp/models/shop_category_model.dart';
 
 class Categories extends StatelessWidget {
   const Categories({super.key});

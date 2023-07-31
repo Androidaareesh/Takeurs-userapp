@@ -217,41 +217,31 @@ class _HomeScreenState extends State<HomeScreen> {
                   const SizedBox(
                     height: 14,
                   ),
-                  const Row(children: [
-                    CircleAvatar(
-                      backgroundColor: Color(0xFFFF61A8),
-                      backgroundImage:
-                          AssetImage("assets/svg_icons/image 17.png"),
-                      radius: 31,
-                    ),
-                    SizedBox(
-                      width: 36,
-                    ),
-                    CircleAvatar(
-                      backgroundColor: Colors.grey,
-                      backgroundImage:
-                          AssetImage("assets/svg_icons/image 15.png"),
-                      radius: 31,
-                    ),
-                    SizedBox(
-                      width: 36,
-                    ),
-                    CircleAvatar(
-                      backgroundColor: Color(0xFFFF61A8),
-                      backgroundImage:
-                          AssetImage("assets/svg_icons/image 14.png"),
-                      radius: 31,
-                    ),
-                    SizedBox(
-                      width: 36,
-                    ),
-                    CircleAvatar(
-                      backgroundColor: Colors.grey,
-                      backgroundImage:
-                          AssetImage("assets/svg_icons/image 16.png"),
-                      radius: 31,
-                    ),
-                  ]),
+                  SizedBox(
+                    height: 60,
+                    child: ListView.builder(
+                        shrinkWrap: true,
+                        physics: const AlwaysScrollableScrollPhysics(),
+                        scrollDirection: Axis.horizontal,
+                        itemCount: _brandNearbyList.length,
+                        itemBuilder: (context, index) {
+                          return Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              CircleAvatar(
+                                radius: 40,
+                                backgroundColor: _colorIndex == 0
+                                    ? AppColors.litPink.withAlpha(40)
+                                    : AppColors.grey.withAlpha(20),
+                                child: Image.asset(_brandNearbyList[index]),
+                              ),
+                              const SizedBox(
+                                width: 12,
+                              )
+                            ],
+                          );
+                        }),
+                  )
                 ],
               ),
             ),
