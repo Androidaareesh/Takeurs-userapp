@@ -6,12 +6,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:takeurs_userapp/widgets/BigOne.dart';
-import 'package:takeurs_userapp/widgets/Categories.dart';
 import 'package:takeurs_userapp/widgets/OfferNearMe.dart';
 import 'package:takeurs_userapp/widgets/TopDeals.dart';
 import 'package:takeurs_userapp/widgets/TopOffers.dart';
 import 'package:takeurs_userapp/widgets/Upcoming.dart';
 import '../utlis_color/utlis_color.dart';
+import '../widgets/Categories.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -43,7 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: AppColors.white,
       appBar: AppBar(
-        backgroundColor: AppColors.white,
+        backgroundColor: AppColors.primaryColor,
         elevation: 0,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -57,12 +57,12 @@ class _HomeScreenState extends State<HomeScreen> {
               TextSpan(
                   text: "Take",
                   style: TextStyle(
-                      color: AppColors.primaryColor,
+                      color: AppColors.white,
                       fontWeight: FontWeight.bold)),
               TextSpan(
                   text: "urs",
                   style: TextStyle(
-                      color: AppColors.primaryColor,
+                      color: AppColors.white,
                       fontWeight: FontWeight.normal)),
             ]))
           ],
@@ -152,7 +152,8 @@ class _HomeScreenState extends State<HomeScreen> {
             const SizedBox(
               height: 24,
             ),
-            //const Categories(),
+        //  const Categories(),
+            
             //best deals
             const SizedBox(
               height: 24,

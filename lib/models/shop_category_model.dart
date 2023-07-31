@@ -1,8 +1,26 @@
-class ShopCategory {
+import 'package:flutter/material.dart';
+
+class ShopCategory extends StatelessWidget {
   final String categoryName;
   final String categoryIcon;
+    final press;
 
-  ShopCategory({required this.categoryName,required this.categoryIcon});
+  const ShopCategory({super.key, required this.categoryName,required this.categoryIcon, this.press});
+  
+  @override
+  Widget build(BuildContext context) {
+   return Material(
+     child: InkWell(
+      onTap: press,
+       child: Column(
+        children: [
+          Image.asset(categoryIcon),
+           Text(categoryName),
+        ],
+       ),
+     ),
+   );
+  }
 }
  
 
