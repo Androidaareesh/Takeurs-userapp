@@ -69,6 +69,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: SingleChildScrollView(
         child: Column(
+          //crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Padding(
               padding: const EdgeInsets.all(14.0),
@@ -146,15 +147,11 @@ class _HomeScreenState extends State<HomeScreen> {
               height: 14,
             ),
             // code for category area
-            //
-            // ignore: prefer_const_constructors
-            CustomText(
-              buttonText: 'See All >',
-              categoryTitle: 'Shops by Categories',
-              onPressed: () {},
+            const Text("Shops by Categories", style: TextStyle(fontSize: 24)),
+            const SizedBox(
+              height: 24,
             ),
             const Categories(),
-
             //best deals
             const SizedBox(
               height: 24,
@@ -164,10 +161,9 @@ class _HomeScreenState extends State<HomeScreen> {
             Container(
               color: AppColors.white,
               child: Column(children: [
-                CustomText(
-                  buttonText: 'See All >',
-                  categoryTitle: 'Best Deals in city',
-                  onPressed: () {},
+                const Text(
+                  "Best Deals in city ",
+                  style: TextStyle(fontSize: 24),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(
@@ -191,12 +187,10 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
 
             // offers near me
-            CustomText(
-              buttonText: 'See All >',
-              categoryTitle: 'Offers Nearby',
-              onPressed: () {},
+            const Text(
+              "Offers nearby",
+              style: TextStyle(fontSize: 24),
             ),
-
             const SizedBox(
               height: 8,
             ),
@@ -205,44 +199,56 @@ class _HomeScreenState extends State<HomeScreen> {
               height: 24,
             ),
             // brands near by
-            Container(
-              color: AppColors.white,
-              child: Column(
-                children: [
-                  CustomText(
-                    buttonText: 'See All >',
-                    categoryTitle: 'Brands Nearby',
-                    onPressed: () {},
-                  ),
-                  const SizedBox(
-                    height: 14,
-                  ),
-                  SizedBox(
-                    height: 60,
-                    child: ListView.builder(
-                        shrinkWrap: true,
-                        physics: const AlwaysScrollableScrollPhysics(),
-                        scrollDirection: Axis.horizontal,
-                        itemCount: _brandNearbyList.length,
-                        itemBuilder: (context, index) {
-                          return Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              CircleAvatar(
-                                radius: 40,
-                                backgroundColor: _colorIndex == 0
-                                    ? AppColors.litPink.withAlpha(40)
-                                    : AppColors.grey.withAlpha(20),
-                                child: Image.asset(_brandNearbyList[index]),
-                              ),
-                              const SizedBox(
-                                width: 12,
-                              )
-                            ],
-                          );
-                        }),
-                  )
-                ],
+            Padding(
+              padding: const EdgeInsets.only(left:24),
+              child: Container(
+                color: AppColors.white,
+                child: const Column(
+                  children: [
+                    Text(
+                      "Brands nearby",
+                      style: TextStyle(fontSize: 24),
+                    ),
+                    SizedBox(
+                      height: 14,
+                    ),
+                    Row(children: [
+                      CircleAvatar(
+                        backgroundColor: Color(0xFFFF61A8),
+                        backgroundImage:
+                            AssetImage("assets/svg_icons/image 17.png"),
+                        radius: 31,
+                      ),
+                      SizedBox(
+                        width: 36,
+                      ),
+                      CircleAvatar(
+                        backgroundColor: Colors.grey,
+                        backgroundImage:
+                            AssetImage("assets/svg_icons/image 15.png"),
+                        radius: 31,
+                      ),
+                      SizedBox(
+                        width: 36,
+                      ),
+                      CircleAvatar(
+                        backgroundColor: Color(0xFFFF61A8),
+                        backgroundImage:
+                            AssetImage("assets/svg_icons/image 14.png"),
+                        radius: 31,
+                      ),
+                      SizedBox(
+                        width: 36,
+                      ),
+                      CircleAvatar(
+                        backgroundColor: Colors.grey,
+                        backgroundImage:
+                            AssetImage("assets/svg_icons/image 16.png"),
+                        radius: 31,
+                      ),
+                    ]),
+                  ],
+                ),
               ),
             ),
             const SizedBox(
@@ -252,20 +258,16 @@ class _HomeScreenState extends State<HomeScreen> {
             Container(
               padding: const EdgeInsets.only(top: 8, bottom: 8),
               color: AppColors.grey,
-              child: Column(
+              child: const Column(
                 children: [
-                  CustomText(
-                    buttonText: 'See All >',
-                    categoryTitle: 'Brands Nearby',
-                    onPressed: () {},
-                  ),
-                  const SizedBox(
+                  Text("Top Deals", style: TextStyle(fontSize: 24)),
+                  SizedBox(
                     height: 8,
                   ),
                   const TopDeals(),
 
                   // top offers
-                  const SizedBox(
+                  SizedBox(
                     height: 24,
                   ),
                 ],
@@ -274,12 +276,7 @@ class _HomeScreenState extends State<HomeScreen> {
             const SizedBox(
               height: 12,
             ),
-            CustomText(
-              buttonText: 'See All >',
-              categoryTitle: 'Top Offers',
-              onPressed: () {},
-            ),
-
+            const Text("Top Offers", style: TextStyle(fontSize: 24)),
             const SizedBox(
               height: 12,
             ),
@@ -293,17 +290,13 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             Container(
               color: Colors.pink.shade50,
-              child: Column(
+              child: const Column(
                 children: [
-                  const SizedBox(
+                  SizedBox(
                     height: 12,
                   ),
-                  CustomText(
-                    buttonText: 'See All >',
-                    categoryTitle: 'Upcoming Deals',
-                    onPressed: () {},
-                  ),
-                  const SizedBox(
+                  Text("Upcoming Deals", style: TextStyle(fontSize: 24)),
+                  SizedBox(
                     height: 12,
                   ),
                   const Upcoming(),
