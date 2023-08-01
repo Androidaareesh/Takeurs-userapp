@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:takeurs_userapp/Materials/constant.dart';
+import 'package:takeurs_userapp/Materials/custom_appbar.dart';
 
 class Settings extends StatefulWidget {
   const Settings({super.key});
@@ -14,6 +15,7 @@ class _SettingsState extends State<Settings> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: customAppBar(title: "Settings", context: context),
       resizeToAvoidBottomInset: false,
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
@@ -24,21 +26,8 @@ class _SettingsState extends State<Settings> {
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
             child: Column(
               children: [
-                const Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "Settings",
-                      style: TextStyle(
-                        color: TBlack,
-                        fontSize: 18,
-                        fontFamily: "Cofinex-Bold",
-                      ),
-                    ),
-                  ],
-                ),
                 const SizedBox(
-                  height: 40,
+                  height: 10,
                 ),
                 Container(
                   decoration: BoxDecoration(

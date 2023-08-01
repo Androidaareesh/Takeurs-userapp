@@ -1,103 +1,103 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class Categories extends StatelessWidget {
-  const Categories({super.key});
+  Categories({super.key});
+
+  List<Map<String, dynamic>> savedProducts = [
+    {
+      "img": "assets/svg_icons/health11.png",
+      "itemName": "Health",
+    },
+    {
+      "img": "assets/svg_icons/spa.png",
+      "itemName": "Spa",
+    },
+    {
+      "img": "assets/svg_icons/milk.png",
+      "itemName": "Groceries",
+    },
+    {
+      "img": "assets/svg_icons/shop.png",
+      "itemName": "Super Market",
+    },
+    {
+      "img": "assets/svg_icons/chip.png",
+      "itemName": "Hardware",
+    },
+    {
+      "img": "assets/svg_icons/food.png",
+      "itemName": "Restaurants",
+    },
+    {
+      "img": "assets/svg_icons/carrot.png",
+      "itemName": "Green Fresh",
+    },
+    // {
+    //   "img": "assets/svg_icons/comb.png",
+    //   "itemName": "Saloon",
+    // },
+    // {
+    //   "img": "assets/svg_icons/gold.png",
+    //   "itemName": "Jewellary",
+    // },
+    // {
+    //   "img": "assets/svg_icons/cake.png",
+    //   "itemName": "Bakery",
+    // },
+    // {
+    //   "img": "assets/svg_icons/gym.png",
+    //   "itemName": "Sports / Gym",
+    // },
+    {
+      "img": "assets/svg_icons/more.png",
+      "itemName": "More",
+    },
+  ];
+
+  // int _getCrossAxisCount(BuildContext context) {
+  //   double screenWidth = MediaQuery.of(context).size.width;
+  //   int crossAxisCount = 2;
+  //   if (screenWidth > 600) {
+  //     crossAxisCount = 4;
+  //   } else if (screenWidth > 400) {
+  //     crossAxisCount = 3;
+  //   }
+  //   return crossAxisCount;
+  // }
 
   @override
   Widget build(BuildContext context) {
-    return  Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(left: 12),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Column(
-                  children: [
-                    SvgPicture.asset("assets/svg_icons/health.svg"),
-                    const Text("Health")
-                  ],
-                ),
-                const SizedBox(
-                  width: 16,
-                ),
-                Column(
-                  children: [
-                    Image.asset("assets/svg_icons/spa.png"),
-                    const Text("Spa")
-                  ],
-                ),
-                const SizedBox(
-                  width: 16,
-                ),
-                Column(
-                  children: [
-                    Image.asset("assets/svg_icons/milk.png"),
-                    const Text("Groceries")
-                  ],
-                ),
-                const SizedBox(
-                  width: 16,
-                ),
-                Column(
-                  children: [
-                    Image.asset("assets/svg_icons/shop.png"),
-                    const Text("Super Market")
-                  ],
-                ),
-              ],
+    return GridView.builder(
+        itemCount: savedProducts.length,
+        physics: const NeverScrollableScrollPhysics(),
+        shrinkWrap: true,
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 4,
+          crossAxisSpacing: 2,
+          mainAxisSpacing: 2,
+        ),
+        itemBuilder: (context, index) {
+          return Padding(
+            padding: const EdgeInsets.only(left: 6.0, right: 6.0),
+            child: GestureDetector(
+              onTap: () {},
+              child: Column(
+                children: [
+                  Flexible(child: Image.asset(savedProducts[index]["img"])),
+                  const SizedBox(
+                    height: 8,
+                  ),
+                  Flexible(
+                      child: Text(
+                    savedProducts[index]["itemName"],
+                    textAlign: TextAlign.center,
+                  ))
+                ],
+              ),
             ),
-          ),
-          const SizedBox(
-            height: 24,
-          ),
-          // second row
-          Padding(
-            padding: const EdgeInsets.only(left: 12),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              //mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Column(
-                  children: [
-                    Image.asset("assets/svg_icons/chip.png"),
-                    const Text("Hardware")
-                  ],
-                ),
-                const SizedBox(
-                  width: 16,
-                ),
-                Column(
-                  children: [
-                    Image.asset("assets/svg_icons/food.png"),
-                    const Text("Restaurants")
-                  ],
-                ),
-                const SizedBox(
-                  width: 16,
-                ),
-                Column(
-                  children: [
-                    Image.asset("assets/svg_icons/carrot.png"),
-                    const Text("Green Fresh")
-                  ],
-                ),
-                const SizedBox(
-                  width: 16,
-                ),
-                Column(
-                  children: [
-                    Image.asset("assets/svg_icons/comb.png"),
-                    const Text("Saloon")
-                  ],
-                ),
-              ],
-            ),
-          )]
-    );
+          );
+        });
   }
 }
-

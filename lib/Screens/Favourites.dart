@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:takeurs_userapp/Materials/custom_appbar.dart';
 
 class Favourites extends StatefulWidget {
   const Favourites({super.key});
@@ -10,6 +11,8 @@ class Favourites extends StatefulWidget {
 class _FavouritesState extends State<Favourites> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return Scaffold(
+      appBar: customAppBar(title: "Favourites", context: context),
+    );
   }
 }

@@ -150,16 +150,12 @@ class _HomeScreenState extends State<HomeScreen> {
               categoryTitle: 'Shops by Categories',
               onPressed: () {},
             ),
-            const Categories(),
-
-            //best deals
             const SizedBox(
               height: 24,
             ),
-
-            // best deals
+            Categories(),
             Container(
-              color: AppColors.white,
+              color: AppColors.litPink.withAlpha(26),
               child: Column(children: [
                 CustomText(
                   buttonText: 'See All >',
@@ -168,7 +164,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(
-                      bottom: 8.0, left: 14, right: 14, top: 10),
+                      bottom: 8.0, left: 14, right: 14, top: 6),
                   child: Card(
                     elevation: 2,
                     shadowColor: Colors.pinkAccent,
