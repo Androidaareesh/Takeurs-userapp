@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:takeurs_userapp/Materials/custom_appbar.dart';
+import 'package:takeurs_userapp/utlis_color/utlis_color.dart';
 
 import 'Favourites.dart';
 import 'ProductPage.dart';
@@ -35,31 +36,70 @@ class _FavouritesState extends State<Favourites> {
           itemCount: products.length,
           itemBuilder: (context, index) {
             final product = products[index];
-            return Card(
-              child: Container(
-                height: 100,
-                child: ListTile(
-                  leading: CircleAvatar(
-                    radius: 50,
-                    backgroundImage: AssetImage(product.image),
-                  ),
-                  title: Text(
-                    product.productname,
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
-                  ),
-                  subtitle: Text(product.price),
-                  trailing: const Icon(Icons.arrow_forward),
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => ProductPage(
-                                  product: product,
-                                )));
-                  },
-                ),
-              ),
-            );
+             return 
+             Padding(
+               padding: const EdgeInsets.all(16.0),
+               child: ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                 child: Container(
+                  height: 100,
+                  color: AppColors.grey,
+                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      SizedBox(
+                        height: 100,
+                        width: 100,
+                        child: Image.asset(product.image)),
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(product.productname,
+                             style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w500),),
+                            Text(product.price),
+                          ],
+                        ),
+                       IconButton(onPressed: (){
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ProductPage(
+                                      product: product,
+                                    )));
+                       }, icon: const Icon(Icons.arrow_forward))
+                    ],
+                   ),
+                 ),
+               ),
+             );
+            // Padding(
+            //   padding: const EdgeInsets.all(20.0),
+            //   child: Card(
+            //     child: SizedBox(
+            //       height: 100,
+            //       child: ListTile(
+            //         leading: SizedBox(
+            //           height: 50,
+            //           width: 50,
+            //           child: Image.asset(product.image)),
+            //         title: Text(
+            //           product.productname,
+            //           style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+            //         ),
+            //         subtitle: Text(product.price),
+            //         trailing: const Icon(Icons.arrow_forward),
+            //         onTap: () {
+            //           Navigator.push(
+            //               context,
+            //               MaterialPageRoute(
+            //                   builder: (context) => ProductPage(
+            //                         product: product,
+            //                       )));
+            //         },
+            //       ),
+            //     ),
+            //   ),
+            // );
           }),
     );
   }

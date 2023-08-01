@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_connect/http/src/utils/utils.dart';
+import 'package:takeurs_userapp/utlis_color/utlis_color.dart';
 
+import '../Materials/Custom_btn.dart';
+import '../Materials/custom_appbar.dart';
 import 'Favourites.dart';
 
 
@@ -15,31 +19,59 @@ class _ProductPageState extends State<ProductPage> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      appBar: AppBar(
-        title: Text("Product"),
-        centerTitle: true,
+      appBar: customAppBar(
+        title:"Product", context: context,
+        
       ),
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.only(left: 30,top: 50),
+          padding: const EdgeInsets.only(left: 30,right: 30,top: 20),
           child: Column(
+            mainAxisAlignment:MainAxisAlignment.start,
             children: [
-              Text("product.productname"),
+              const Text("Strawberry",style: TextStyle(fontSize: 24,fontWeight: FontWeight.bold),),
              const SizedBox(
-                height: 30,
+                height: 15,
               ),
-              Text("product.price"),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text("50",
+                    style: TextStyle(fontSize:18),
+                  ),
+                  Icon(Icons.currency_rupee)
+                ],
+              ),
               const SizedBox(
                 height: 30,
               ),
-              Image.asset("assets/svg_icons/strawberry.png"),
+              Image.asset("assets/svg_icons/strawberry.png",height:250 ,width: 250,),
               const SizedBox(
                 height: 40,
               ),
-
-              ElevatedButton(style: ElevatedButton.styleFrom(
-                minimumSize: const Size(350, 40)
-              ),onPressed: (){}, child: const Text("Get Directions",style: TextStyle(fontSize: 24),))
+              const Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Text("Descriptions",
+                  textAlign: TextAlign.start,
+                  style: TextStyle(
+                  fontWeight: FontWeight.bold),),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text("A strawberry is both a low-growing, flowering plant and also the name of the fruit that it produces. Strawberries are soft, sweet, bright red berries. They're also delicious. Strawberries have tiny edible seeds, which grow all over their surface.",
+                  textAlign: TextAlign.start,)
+                ],
+              ),
+              const SizedBox(
+                height: 40,
+              ),
+             CustomButton(
+              borderRadius: 50,
+              buttonclr: AppColors.primaryColor, 
+              buttontxt: 'Get Direction',
+              onTap: () {}, 
+              textclr:AppColors.white ,)
               
             ],
           ),
