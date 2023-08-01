@@ -10,12 +10,12 @@ PreferredSize customAppBar({
       child: AppBar(
         backgroundColor: AppColors.primaryColor,
         elevation: 0.0,
-        centerTitle: true,
+        centerTitle: false,
         title: Text(
           title,
           style: const TextStyle(
               color: AppColors.white,
-              fontSize: 14.6,
+              fontSize: 18.6,
               fontWeight: FontWeight.bold),
         ),
       ));
