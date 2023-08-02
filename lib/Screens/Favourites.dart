@@ -39,35 +39,65 @@ class _FavouritesState extends State<Favourites> {
              return 
              Padding(
                padding: const EdgeInsets.all(16.0),
-               child: ClipRRect(
-                borderRadius: BorderRadius.circular(20),
-                 child: Container(
-                  height: 100,
-                  color: AppColors.grey,
-                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      SizedBox(
-                        height: 100,
-                        width: 100,
-                        child: Image.asset(product.image)),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(product.productname,
-                             style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w500),),
-                            Text(product.price),
-                          ],
+               child: InkWell(
+                onTap: (){
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ProductPage(
+                                product: product,
+                              )));
+                },
+                 child: ClipRRect(
+                  borderRadius: BorderRadius.circular(20),
+                   child: Container(
+                    height: 100,
+                    color: AppColors.grey,
+                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(left:8),
+                          child: Row(
+                            children: [
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(20),
+                                child: Container(
+                                  height: 70,
+                                  width: 70,
+                                  color: AppColors.white,
+                                  child: Image.asset(product.image)),
+                              ),
+                              const SizedBox(
+                                width: 20,
+                              ),
+                              Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    product.productname,
+                                    style: const TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w500),
+                                  ),
+                                  Text(product.price),
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
-                       IconButton(onPressed: (){
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => ProductPage(
-                                      product: product,
-                                    )));
-                       }, icon: const Icon(Icons.arrow_forward))
-                    ],
+                          
+                         IconButton(onPressed: (){
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => ProductPage(
+                                        product: product,
+                                      )));
+                         }, icon: const Icon(Icons.arrow_forward))
+                      ],
+                     ),
                    ),
                  ),
                ),
