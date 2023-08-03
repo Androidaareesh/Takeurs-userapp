@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 
+import '../Screens/health_Categories.dart';
+
 class Categories extends StatelessWidget {
   Categories({super.key});
 
@@ -82,7 +84,9 @@ class Categories extends StatelessWidget {
           return Padding(
             padding: const EdgeInsets.only(left: 6.0, right: 6.0),
             child: GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: ((context)=>const HealthCategories())));
+              },
               child: Column(
                 children: [
                   Flexible(child: Image.asset(savedProducts[index]["img"])),

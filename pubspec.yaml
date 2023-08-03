@@ -100,7 +100,8 @@ flutter:
     - assets/svg_icons/milk.png
     - assets/svg_icons/strawberry.png
     - assets/svg_icons/Nikewatch.png
-    - assets/svg_icons/i perfume.png 
+    - assets/svg_icons/i perfume.png
+    - assets/svg_icons/apollo.png 
     
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

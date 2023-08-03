@@ -102,34 +102,7 @@ class _FavouritesState extends State<Favourites> {
                  ),
                ),
              );
-            // Padding(
-            //   padding: const EdgeInsets.all(20.0),
-            //   child: Card(
-            //     child: SizedBox(
-            //       height: 100,
-            //       child: ListTile(
-            //         leading: SizedBox(
-            //           height: 50,
-            //           width: 50,
-            //           child: Image.asset(product.image)),
-            //         title: Text(
-            //           product.productname,
-            //           style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
-            //         ),
-            //         subtitle: Text(product.price),
-            //         trailing: const Icon(Icons.arrow_forward),
-            //         onTap: () {
-            //           Navigator.push(
-            //               context,
-            //               MaterialPageRoute(
-            //                   builder: (context) => ProductPage(
-            //                         product: product,
-            //                       )));
-            //         },
-            //       ),
-            //     ),
-            //   ),
-            // );
+          
           }),
     );
   }
