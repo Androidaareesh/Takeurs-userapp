@@ -58,6 +58,8 @@ class Categories extends StatelessWidget {
     },
   ];
 
+  
+   
   // int _getCrossAxisCount(BuildContext context) {
   //   double screenWidth = MediaQuery.of(context).size.width;
   //   int crossAxisCount = 2;
@@ -97,8 +99,79 @@ class Categories extends StatelessWidget {
                       child: Text(
                     savedProducts[index]["itemName"],
                     textAlign: TextAlign.center,
-                  ))
+                  )),
                 ],
+              ),
+            ),
+          );
+        });
+  }
+}
+
+
+class HideCategory extends StatefulWidget {
+  const HideCategory({super.key});
+
+  @override
+  State<HideCategory> createState() => _HideCategoryState();
+}
+
+class _HideCategoryState extends State<HideCategory> {
+  bool isVisible = true;
+  List<Map<String, dynamic>> hideCategories = [
+    {
+      "img": "assets/svg_icons/comb.png",
+      "itemName": "Saloon",
+    },
+    {
+      "img": "assets/svg_icons/gold.png",
+      "itemName": "Jewellary",
+    },
+    {
+      "img": "assets/svg_icons/cake.png",
+      "itemName": "Bakery",
+    },
+    {
+      "img": "assets/svg_icons/gym.png",
+      "itemName": "Sports / Gym",
+    },
+  ];
+  @override
+  Widget build(BuildContext context) {
+    return  GridView.builder(
+        itemCount: hideCategories.length,
+        physics: const NeverScrollableScrollPhysics(),
+        shrinkWrap: true,
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 4,
+          crossAxisSpacing: 2,
+          mainAxisSpacing: 2,
+        ),
+        itemBuilder: (context, index) {
+          return Padding(
+            padding: const EdgeInsets.only(left: 6.0, right: 6.0),
+            child: GestureDetector(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: ((context)=>const HealthCategories())));
+              },
+              child: Visibility(
+              visible: isVisible,
+              maintainAnimation: true,
+              maintainSize: true,
+              maintainState: true,
+                child: Column(
+                  children: [
+                    Flexible(child: Image.asset(hideCategories[index]["img"])),
+                    const SizedBox(
+                      height: 8,
+                    ),
+                    Flexible(
+                        child: Text(
+                      hideCategories[index]["itemName"],
+                      textAlign: TextAlign.center,
+                    )),
+                  ],
+                ),
               ),
             ),
           );

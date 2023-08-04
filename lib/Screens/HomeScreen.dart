@@ -20,8 +20,10 @@ class HomeScreen extends StatefulWidget {
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
+ 
 
 class _HomeScreenState extends State<HomeScreen> {
+  bool isVisible = true;
   int _colorIndex = 0;
 
   int _currentIndex = 0;
@@ -146,14 +148,25 @@ class _HomeScreenState extends State<HomeScreen> {
               height: 14,
             ),
             CustomText(
-              buttonText: 'See All >',
+              buttonText: 'See All /See Less>',
               categoryTitle: 'Shops by Categories',
-              onPressed: () {},
+              onPressed: () {
+                setState(() {
+                  isVisible = !isVisible;
+                });
+              },
             ),
             const SizedBox(
               height: 24,
             ),
             Categories(),
+             Visibility(
+              visible: isVisible,
+                // maintainAnimation: true,
+                // maintainSize: true,
+                // maintainState: true,
+                // maintainSemantics: true,
+              child: const HideCategory()),
             Container(
               color: AppColors.litPink.withAlpha(26),
               child: Column(children: [

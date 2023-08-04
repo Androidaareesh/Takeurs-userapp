@@ -18,14 +18,14 @@ class CategoryCard extends StatelessWidget {
         decoration: BoxDecoration(
             color:AppColors.white,
             borderRadius: BorderRadius.circular(15),
-            boxShadow: const [
-              BoxShadow(   
-                             
-                offset: Offset(0,20),
-                blurRadius: 7,
-                spreadRadius: 100,
-                color:AppColors.black,
-              )
+            boxShadow:  [
+              BoxShadow(                                
+                offset: const Offset(4,4),
+                blurRadius: 10,
+                spreadRadius: 1,
+                color:Colors.grey.shade600,
+              ),
+             
             ]),       
         child: Material(
           color: Colors.transparent,
@@ -39,7 +39,7 @@ class CategoryCard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Icon(Icons.favorite_border_outlined,
-                      color: AppColors.white,),
+                      color: AppColors.black,),
                     ],
                   ),
 
