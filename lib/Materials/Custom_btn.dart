@@ -35,6 +35,7 @@ class _CustomButtonState extends State<CustomButton> {
             color: widget.buttonclr,
             borderRadius: BorderRadius.circular(widget.borderRadius),
             border: Border.all(color: TPrimary)),
+            
         child: Center(
           child: isLoading
               ? const CircularProgressIndicator()
