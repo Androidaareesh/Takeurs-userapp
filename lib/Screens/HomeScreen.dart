@@ -20,7 +20,6 @@ class HomeScreen extends StatefulWidget {
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
- 
 
 class _HomeScreenState extends State<HomeScreen> {
   bool isVisible = true;
@@ -46,6 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: AppColors.white,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: AppColors.primaryColor,
         elevation: 0,
         title: Row(
@@ -160,13 +160,13 @@ class _HomeScreenState extends State<HomeScreen> {
               height: 24,
             ),
             Categories(),
-             Visibility(
-              visible: isVisible,
+            Visibility(
+                visible: isVisible,
                 // maintainAnimation: true,
                 // maintainSize: true,
                 // maintainState: true,
                 // maintainSemantics: true,
-              child: const HideCategory()),
+                child: const HideCategory()),
             Container(
               color: AppColors.litPink.withAlpha(26),
               child: Column(children: [
