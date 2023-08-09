@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:takeurs_userapp/Screens/BottomNavigation.dart';
+import 'package:takeurs_userapp/Screens/OTP.dart';
 import 'package:takeurs_userapp/Screens/login.dart';
 
 import 'Screens/WelcomPage.dart';
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const WelcomePage(),
+      home: const OTP(),
     );
   }
 }

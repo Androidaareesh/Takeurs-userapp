@@ -148,7 +148,7 @@ class _HomeScreenState extends State<HomeScreen> {
               height: 14,
             ),
             CustomText(
-              buttonText: 'See All /See Less>',
+              buttonText: 'See All>',
               categoryTitle: 'Shops by Categories',
               onPressed: () {
                 setState(() {
