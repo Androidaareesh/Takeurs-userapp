@@ -16,14 +16,14 @@ class _BottomNavigationState extends State<BottomNavigation> {
   int currentTab = 0;
 
   final PageStorageBucket bucket = PageStorageBucket();
-  Widget currentScreen = HomeScreen();
+  Widget currentScreen = const HomeScreen();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: PageStorage(
-        child: currentScreen,
         bucket: bucket,
+        child: currentScreen,
       ),
       bottomNavigationBar: BottomAppBar(
         child: SizedBox(
@@ -35,7 +35,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
               GestureDetector(
                 onTap: () {
                   setState(() {
-                    currentScreen = HomeScreen();
+                    currentScreen = const HomeScreen();
                     currentTab = 0;
                   });
                 },
@@ -55,7 +55,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
               GestureDetector(
                 onTap: () {
                   setState(() {
-                    currentScreen = Favourites();
+                    currentScreen = const Favourites();
                     currentTab = 1;
                   });
                 },
@@ -75,7 +75,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
               GestureDetector(
                 onTap: () {
                   setState(() {
-                    currentScreen = Settings();
+                    currentScreen = const Settings();
                     currentTab = 2;
                   });
                 },

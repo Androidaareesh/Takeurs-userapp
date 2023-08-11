@@ -34,7 +34,7 @@ class _LoginPageState extends State<LoginPage> {
                             MaterialPageRoute(
                                 builder: (context) => const WelcomePage()));
                       },
-                      child: Icon(Icons.arrow_back_ios_new_rounded))
+                      child: const Icon(Icons.arrow_back_ios_new_rounded))
                 ],
               ),
               const SizedBox(
@@ -85,7 +85,7 @@ class _LoginPageState extends State<LoginPage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       const Text("Don’t have an account? "),
-                      SizedBox(
+                      const SizedBox(
                         width: 4,
                       ),
                       GestureDetector(
@@ -96,7 +96,7 @@ class _LoginPageState extends State<LoginPage> {
                                     builder: (context) =>
                                         const RegisterPage()));
                           },
-                          child: Text(
+                          child: const Text(
                             "Register Now",
                             style: TextStyle(color: primaryColor),
                           ))

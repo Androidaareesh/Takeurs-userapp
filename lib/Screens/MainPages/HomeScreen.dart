@@ -11,6 +11,7 @@ import 'package:takeurs_userapp/Widgets/OfferNearBy.dart';
 import 'package:takeurs_userapp/Widgets/TopDeals.dart';
 import 'package:takeurs_userapp/Widgets/TopOffers.dart';
 import 'package:takeurs_userapp/Widgets/Upcoming.dart';
+import 'package:takeurs_userapp/widgets/videoplayer.dart';
 import '../../Widgets/Categories.dart';
 import '../../Widgets/custom_row_text.dart';
 
@@ -84,7 +85,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ],
         ),
-        actions: [
+        actions: const [
           Icon(
             CupertinoIcons.bell_fill,
             size: 25,
@@ -96,7 +97,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
       body: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         child: Column(
           children: [
             // Search Field
@@ -203,7 +204,7 @@ class _HomeScreenState extends State<HomeScreen> {
             Container(
               color: primaryColor.withAlpha(16),
               child: Column(children: [
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 CustomText(
@@ -307,7 +308,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 height: 400,
                 decoration: BoxDecoration(
                     color: primaryColor,
-                    borderRadius: BorderRadius.circular(50)),
+                    borderRadius: BorderRadius.circular(50),
+                    ),
+                    child: const VideoPlayerWidget( videoUrl: 'https://youtu.be/9h2bKsJ7j_c'),
               ),
             ),
             // const BigOne(),
