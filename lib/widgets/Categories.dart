@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 
-import '../Screens/health_Categories.dart';
+import '../Materials/health_Categories.dart';
 
 class Categories extends StatelessWidget {
   Categories({super.key});
@@ -58,8 +58,6 @@ class Categories extends StatelessWidget {
     },
   ];
 
-  
-   
   // int _getCrossAxisCount(BuildContext context) {
   //   double screenWidth = MediaQuery.of(context).size.width;
   //   int crossAxisCount = 2;
@@ -87,11 +85,18 @@ class Categories extends StatelessWidget {
             padding: const EdgeInsets.only(left: 6.0, right: 6.0),
             child: GestureDetector(
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: ((context)=>const HealthCategories())));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: ((context) => const HealthCategories())));
               },
               child: Column(
                 children: [
-                  Flexible(child: Image.asset(savedProducts[index]["img"])),
+                  Flexible(
+                      child: Image.asset(
+                    savedProducts[index]["img"],
+                    scale: 1.1,
+                  )),
                   const SizedBox(
                     height: 8,
                   ),
@@ -107,7 +112,6 @@ class Categories extends StatelessWidget {
         });
   }
 }
-
 
 class HideCategory extends StatefulWidget {
   const HideCategory({super.key});
@@ -138,7 +142,7 @@ class _HideCategoryState extends State<HideCategory> {
   ];
   @override
   Widget build(BuildContext context) {
-    return  GridView.builder(
+    return GridView.builder(
         itemCount: hideCategories.length,
         physics: const NeverScrollableScrollPhysics(),
         shrinkWrap: true,
@@ -152,13 +156,16 @@ class _HideCategoryState extends State<HideCategory> {
             padding: const EdgeInsets.only(left: 6.0, right: 6.0),
             child: GestureDetector(
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: ((context)=>const HealthCategories())));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: ((context) => const HealthCategories())));
               },
               child: Visibility(
-              visible: isVisible,
-              maintainAnimation: true,
-              maintainSize: true,
-              maintainState: true,
+                visible: isVisible,
+                maintainAnimation: true,
+                maintainSize: true,
+                maintainState: true,
                 child: Column(
                   children: [
                     Flexible(child: Image.asset(hideCategories[index]["img"])),

@@ -1,7 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-
-import '../utlis_color/utlis_color.dart';
+import 'package:takeurs_userapp/Materials/constant.dart';
 
 class OffersNearMe extends StatefulWidget {
   const OffersNearMe({super.key});
@@ -27,8 +26,7 @@ class _OffersNearMeState extends State<OffersNearMe> {
               padding: const EdgeInsets.symmetric(horizontal: 1.0),
               child: Container(
                 decoration: BoxDecoration(
-                    color: AppColors.white,
-                    borderRadius: BorderRadius.circular(8)),
+                    color: white, borderRadius: BorderRadius.circular(8)),
                 child: Image.asset(
                   url,
                   fit: BoxFit.fill,

@@ -1,8 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
-
-import '../utlis_color/utlis_color.dart';
+import 'package:takeurs_userapp/Materials/constant.dart';
 
 class BigOne extends StatefulWidget {
   const BigOne({super.key});
@@ -28,8 +27,7 @@ class _BigOneState extends State<BigOne> {
             return Container(
               padding: EdgeInsets.symmetric(horizontal: 4),
               decoration: BoxDecoration(
-                  color: AppColors.white,
-                  borderRadius: BorderRadius.circular(8)),
+                  color: white, borderRadius: BorderRadius.circular(8)),
               child: Image.asset(
                 url,
                 fit: BoxFit.fill,
@@ -56,8 +54,8 @@ class _BigOneState extends State<BigOne> {
           position: _currentIndex,
           decorator: DotsDecorator(
             spacing: const EdgeInsets.all(2),
-            activeColor: AppColors.primaryColor,
-            color: AppColors.grey,
+            activeColor: primaryColor,
+            color: grey,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(2.0),
             ),

@@ -1,8 +1,7 @@
 import 'package:carousel_slider/carousel_options.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-
-import '../utlis_color/utlis_color.dart';
+import 'package:takeurs_userapp/Materials/constant.dart';
 
 class TopDeals extends StatefulWidget {
   const TopDeals({super.key});
@@ -24,7 +23,7 @@ class _TopDealsState extends State<TopDeals> {
       items: _imageUrls.map((url) {
         return Container(
           decoration: BoxDecoration(
-              color: AppColors.white, borderRadius: BorderRadius.circular(8)),
+              color: white, borderRadius: BorderRadius.circular(8)),
           child: Image.asset(
             url,
             fit: BoxFit.fill,

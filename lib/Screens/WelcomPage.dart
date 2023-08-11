@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:takeurs_userapp/Screens/RegisterPage.dart';
-import 'package:takeurs_userapp/Screens/login.dart';
-import 'package:takeurs_userapp/utlis_color/utlis_color.dart';
-import '../Materials/Custom_btn.dart';
+import 'package:takeurs_userapp/Screens/Authentication/RegisterPage.dart';
+import 'package:takeurs_userapp/Screens/Authentication/LoginScreen.dart';
+import 'package:takeurs_userapp/Materials/constant.dart';
+import '../Materials/CustomButton.dart';
+import '../Materials/constant.dart';
 
 class WelcomePage extends StatefulWidget {
   const WelcomePage({super.key});
@@ -15,8 +16,8 @@ class WelcomePage extends StatefulWidget {
 class _WelcomePageState extends State<WelcomePage> {
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(
-        const SystemUiOverlayStyle(statusBarColor: Colors.white));
+    // SystemChrome.setSystemUIOverlayStyle(
+    //     const SystemUiOverlayStyle(statusBarColor: Colors.white));
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
@@ -25,20 +26,22 @@ class _WelcomePageState extends State<WelcomePage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Image.asset(
-                "assets/svg_icons/01.jpg",
-                height: 460,
+              Expanded(
+                child: Image.asset(
+                  "assets/svg_icons/01.jpg",
+                  height: 380,
+                ),
               ),
               const Text(
-                "TAKEurs",
-                style: TextStyle(fontSize: 24),
+                "TAKE YOURS",
+                style: TextStyle(fontSize: 20),
               ),
               const SizedBox(
                 height: 30,
               ),
               CustomButton(
                 borderRadius: 8,
-                buttonclr: AppColors.primaryColor,
+                buttonclr: primaryColor,
                 buttontxt: 'Login',
                 onTap: () {
                   Navigator.push(
@@ -46,14 +49,14 @@ class _WelcomePageState extends State<WelcomePage> {
                       MaterialPageRoute(
                           builder: (context) => const LoginPage()));
                 },
-                textclr: AppColors.white,
+                textclr: white,
               ),
               const SizedBox(
                 height: 10,
               ),
               CustomButton(
                 borderRadius: 8,
-                buttonclr: AppColors.white,
+                buttonclr: white,
                 buttontxt: 'Register',
                 onTap: () {
                   Navigator.push(
@@ -61,8 +64,11 @@ class _WelcomePageState extends State<WelcomePage> {
                       MaterialPageRoute(
                           builder: (context) => const RegisterPage()));
                 },
-                textclr: AppColors.primaryColor,
-              )
+                textclr: primaryColor,
+              ),
+              const SizedBox(
+                height: 60,
+              ),
             ],
           ),
         ),

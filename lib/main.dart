@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:takeurs_userapp/Screens/BottomNavigation.dart';
-import 'package:takeurs_userapp/Screens/OTP.dart';
-import 'package:takeurs_userapp/Screens/login.dart';
+import 'package:takeurs_userapp/Screens/Authentication/OTP.dart';
+import 'package:takeurs_userapp/Screens/Authentication/LoginScreen.dart';
 
 import 'Screens/WelcomPage.dart';
 
@@ -20,9 +20,9 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+        // useMaterial3: true,
       ),
-      home: const OTP(),
+      home: const BottomNavigation(),
     );
   }
 }

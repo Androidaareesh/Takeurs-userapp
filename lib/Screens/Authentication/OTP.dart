@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:takeurs_userapp/Materials/Custom_btn.dart';
-import 'package:takeurs_userapp/utlis_color/utlis_color.dart';
+import 'package:takeurs_userapp/Materials/CustomButton.dart';
+import 'package:takeurs_userapp/Materials/constant.dart';
 
 class OTP extends StatefulWidget {
   const OTP({super.key});
@@ -12,26 +12,27 @@ class OTP extends StatefulWidget {
 class _OTPState extends State<OTP> {
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(     
-       body:  SafeArea(
-         child: Padding(
-           padding: const EdgeInsets.only(left: 22,right: 22,top: 30),
-           child: Column(
+    return Scaffold(
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.only(left: 22, right: 22, top: 30),
+          child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                   color: Colors.white,
-                  boxShadow: [
-                BoxShadow(                                
-                  offset: const Offset(0,4),
-                  blurRadius: 8,
-                  spreadRadius: 1,
-                  color:Colors.grey.shade600,
-                ),]
-                ),
-                child: IconButton(onPressed: (){}, icon: Icon(Icons.arrow_back_ios)),
+                    borderRadius: BorderRadius.circular(12),
+                    color: Colors.white,
+                    boxShadow: [
+                      BoxShadow(
+                        offset: const Offset(0, 4),
+                        blurRadius: 8,
+                        spreadRadius: 1,
+                        color: Colors.grey.shade600,
+                      ),
+                    ]),
+                child: IconButton(
+                    onPressed: () {}, icon: Icon(Icons.arrow_back_ios)),
               ),
               const SizedBox(
                 height: 38,
@@ -43,12 +44,11 @@ class _OTPState extends State<OTP> {
               const SizedBox(
                 height: 10,
               ),
-              const Text("Enter the verification code we just sent on your email address.",
-              style: TextStyle(
-                fontSize: 16,
-                color: AppColors.grey,
-                fontWeight: FontWeight.w500
-              ),),
+              const Text(
+                "Enter the verification code we just sent on your email address.",
+                style: TextStyle(
+                    fontSize: 16, color: grey, fontWeight: FontWeight.w500),
+              ),
               const SizedBox(
                 height: 32,
               ),
@@ -112,13 +112,16 @@ class _OTPState extends State<OTP> {
               const SizedBox(
                 height: 55,
               ),
-              CustomButton(borderRadius: 8,
-               buttonclr: AppColors.primaryColor,
-                buttontxt: "Verify", onTap: (){}, textclr: AppColors.white),
-                const SizedBox(
+              CustomButton(
+                  borderRadius: 8,
+                  buttonclr: primaryColor,
+                  buttontxt: "Verify",
+                  onTap: () {},
+                  textclr: white),
+              const SizedBox(
                 height: 300,
               ),
-                 Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   const Text("Didn’t received code?"),
@@ -126,9 +129,9 @@ class _OTPState extends State<OTP> {
                 ],
               ),
             ],
-           ),
-         ),
-       ),
+          ),
+        ),
+      ),
     );
   }
 }

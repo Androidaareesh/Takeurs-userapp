@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:takeurs_userapp/Materials/custom_appbar.dart';
-import 'package:takeurs_userapp/utlis_color/utlis_color.dart';
-
+import 'package:takeurs_userapp/Materials/Custom_appbar.dart';
+import 'package:takeurs_userapp/Materials/constant.dart';
+import 'package:takeurs_userapp/Screens/ProductPage.dart';
 import 'Favourites.dart';
-import 'ProductPage.dart';
 
 class Favourites extends StatefulWidget {
   const Favourites({super.key});
@@ -36,11 +35,10 @@ class _FavouritesState extends State<Favourites> {
           itemCount: products.length,
           itemBuilder: (context, index) {
             final product = products[index];
-             return 
-             Padding(
-               padding: const EdgeInsets.all(16.0),
-               child: InkWell(
-                onTap: (){
+            return Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: InkWell(
+                onTap: () {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -48,25 +46,25 @@ class _FavouritesState extends State<Favourites> {
                                 product: product,
                               )));
                 },
-                 child: ClipRRect(
+                child: ClipRRect(
                   borderRadius: BorderRadius.circular(20),
-                   child: Container(
+                  child: Container(
                     height: 100,
-                    color: AppColors.grey,
-                     child: Row(
+                    color: grey,
+                    child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Padding(
-                          padding: const EdgeInsets.only(left:8),
+                          padding: const EdgeInsets.only(left: 8),
                           child: Row(
                             children: [
                               ClipRRect(
                                 borderRadius: BorderRadius.circular(20),
                                 child: Container(
-                                  height: 70,
-                                  width: 70,
-                                  color: AppColors.white,
-                                  child: Image.asset(product.image)),
+                                    height: 70,
+                                    width: 70,
+                                    color: white,
+                                    child: Image.asset(product.image)),
                               ),
                               const SizedBox(
                                 width: 20,
@@ -87,22 +85,22 @@ class _FavouritesState extends State<Favourites> {
                             ],
                           ),
                         ),
-                          
-                         IconButton(onPressed: (){
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => ProductPage(
-                                        product: product,
-                                      )));
-                         }, icon: const Icon(Icons.arrow_forward))
+                        IconButton(
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => ProductPage(
+                                            product: product,
+                                          )));
+                            },
+                            icon: const Icon(Icons.arrow_forward))
                       ],
-                     ),
-                   ),
-                 ),
-               ),
-             );
-          
+                    ),
+                  ),
+                ),
+              ),
+            );
           }),
     );
   }

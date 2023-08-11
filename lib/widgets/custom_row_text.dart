@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:takeurs_userapp/utlis_color/utlis_color.dart';
+import 'package:takeurs_userapp/Materials/constant.dart';
 
 class CustomText extends StatelessWidget {
   final String categoryTitle;
@@ -14,21 +14,21 @@ class CustomText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 14, right: 14, bottom: 10, top: 10),
+      padding: const EdgeInsets.only(left: 20, right: 20, bottom: 10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
             categoryTitle,
-            style: const TextStyle(fontSize: 14.4, fontWeight: FontWeight.bold),
+            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           ),
           InkWell(
             onTap: onPressed,
             child: Text(
               buttonText,
               style: const TextStyle(
-                  color: AppColors.primaryColor,
-                  fontSize: 14,
+                  color: primaryColor,
+                  fontSize: 15,
                   fontWeight: FontWeight.w500),
             ),
           )

@@ -2,7 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 
-import '../utlis_color/utlis_color.dart';
+import '../Materials/constant.dart';
 
 class Upcoming extends StatefulWidget {
   const Upcoming({super.key});
@@ -29,8 +29,7 @@ class _UpcomingState extends State<Upcoming> {
               padding: const EdgeInsets.symmetric(horizontal: 4.0),
               child: Container(
                 decoration: BoxDecoration(
-                    color: AppColors.white,
-                    borderRadius: BorderRadius.circular(8)),
+                    color: white, borderRadius: BorderRadius.circular(8)),
                 child: Image.asset(
                   url,
                   fit: BoxFit.fill,
