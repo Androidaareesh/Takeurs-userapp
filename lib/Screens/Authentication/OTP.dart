@@ -52,7 +52,7 @@ class _OTPState extends State<OTP> {
                 height: 10,
               ),
               const Padding(
-                padding: EdgeInsets.only(left: 22),
+                padding: EdgeInsets.only(left: 22,right: 20),
                 child: Text(
                   "Enter the verification code we just sent on your email address.",
                   style: TextStyle(
@@ -63,12 +63,12 @@ class _OTPState extends State<OTP> {
                 height: 32,
               ),
               Padding(
-                padding: const EdgeInsets.only(left:36,right: 22),
+                padding: const EdgeInsets.only(left: 20,right: 20),
                 child: Row(
                   children: [
                     SizedBox(
-                      height: 60,
-                      width: 70,
+                      height: 80,
+                      width: 80,
                       child: TextFormField(
                         decoration: InputDecoration(
                           border: OutlineInputBorder(
@@ -81,8 +81,8 @@ class _OTPState extends State<OTP> {
                       width: 17,
                     ),
                     SizedBox(
-                      height: 60,
-                      width: 70,
+                     height: 80,
+                      width: 80,
                       child: TextFormField(
                         decoration: InputDecoration(
                           border: OutlineInputBorder(
@@ -95,8 +95,8 @@ class _OTPState extends State<OTP> {
                       width: 17,
                     ),
                     SizedBox(
-                      height: 60,
-                      width: 70,
+                    height: 80,
+                      width: 80,
                       child: TextFormField(
                         decoration: InputDecoration(
                           border: OutlineInputBorder(
@@ -109,8 +109,8 @@ class _OTPState extends State<OTP> {
                       width: 17,
                     ),
                     SizedBox(
-                      height: 60,
-                      width: 70,
+                     height: 80,
+                      width: 80,
                       child: TextFormField(
                         decoration: InputDecoration(
                           border: OutlineInputBorder(
@@ -123,7 +123,7 @@ class _OTPState extends State<OTP> {
                 ),
               ),
               const SizedBox(
-                height: 38,
+                height: 30,
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 20,right: 20),

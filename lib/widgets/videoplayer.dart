@@ -22,14 +22,14 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
   void initState() {
     // TODO: implement initState
 
-    _videoPlayerController =
-        VideoPlayerController.networkUrl(widget.videoUrl as Uri);
-    _initializeVideoPlayerFuture = _videoPlayerController.initialize().then((_)
-    {
-      _videoPlayerController.play;
-      _videoPlayerController.setLooping(true);
-      setState(() {});
-    });
+    // _videoPlayerController =
+    //     VideoPlayerController.networkUrl(widget.videoUrl as Uri);
+    // _initializeVideoPlayerFuture = _videoPlayerController.initialize().then((_)
+    // {
+    //   _videoPlayerController.play;
+    //   _videoPlayerController.setLooping(true);
+    //   setState(() {});
+    // });
     super.initState();
   }
 
