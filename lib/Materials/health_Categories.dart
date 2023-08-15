@@ -24,20 +24,20 @@ class _HealthCategoriesState extends State<HealthCategories> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: customAppBar(title: "Health", context: (context)),
-      body: Padding(
-        padding: const EdgeInsets.only(left: 8, bottom: 16, top: 10),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(
-              height: 150,
-              child: ListView.builder(
-                  shrinkWrap: true,
-                  physics: const AlwaysScrollableScrollPhysics(),
-                  scrollDirection: Axis.horizontal,
-                  itemCount: _brandNearbyList.length,
-                  itemBuilder: (context, index) {
-                    return Row(
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SizedBox(
+            height: 150,
+            child: ListView.builder(
+                shrinkWrap: true,
+                physics: const AlwaysScrollableScrollPhysics(),
+                scrollDirection: Axis.horizontal,
+                itemCount: _brandNearbyList.length,
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding: const EdgeInsets.only(top: 20),
+                    child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         const SizedBox(
@@ -57,63 +57,67 @@ class _HealthCategoriesState extends State<HealthCategories> {
                           ],
                         ),
                       ],
-                    );
-                  }),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            const Text(
+                    ),
+                  );
+                }),
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 20),
+            child: const Text(
               "Hospitals...",
-              style: TextStyle(fontSize: 24),
+              style: TextStyle(fontSize: 24,
+              fontWeight: FontWeight.bold),
             ),
-            const SizedBox(
-              height: 10,
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          Expanded(
+            child: GridView.count(
+              crossAxisCount: 2,
+              childAspectRatio: .90,
+              crossAxisSpacing: 20,
+              mainAxisSpacing: 30,
+              children: [
+                CategoryCard(
+                    image: 'assets/svg_icons/apollo.png',
+                    title: "Apollo",
+                    press: () {}),
+                CategoryCard(
+                    image: 'assets/svg_icons/apollo.png',
+                    title: "Apollo",
+                    press: () {}),
+                CategoryCard(
+                    image: 'assets/svg_icons/apollo.png',
+                    title: "Apollo",
+                    press: () {}),
+                CategoryCard(
+                    image: 'assets/svg_icons/apollo.png',
+                    title: "Apollo",
+                    press: () {}),
+                CategoryCard(
+                    image: 'assets/svg_icons/apollo.png',
+                    title: "Apollo",
+                    press: () {}),
+                CategoryCard(
+                    image: 'assets/svg_icons/apollo.png',
+                    title: "Apollo",
+                    press: () {}),
+                CategoryCard(
+                    image: 'assets/svg_icons/apollo.png',
+                    title: "Apollo",
+                    press: () {}),
+                CategoryCard(
+                    image: 'assets/svg_icons/apollo.png',
+                    title: "Apollo",
+                    press: () {}),
+              ],
             ),
-            Expanded(
-              child: GridView.count(
-                crossAxisCount: 2,
-                childAspectRatio: .84,
-                crossAxisSpacing: 20,
-                mainAxisSpacing: 30,
-                children: [
-                  CategoryCard(
-                      image: 'assets/svg_icons/apollo.png',
-                      title: "Apollo",
-                      press: () {}),
-                  CategoryCard(
-                      image: 'assets/svg_icons/apollo.png',
-                      title: "Apollo",
-                      press: () {}),
-                  CategoryCard(
-                      image: 'assets/svg_icons/apollo.png',
-                      title: "Apollo",
-                      press: () {}),
-                  CategoryCard(
-                      image: 'assets/svg_icons/apollo.png',
-                      title: "Apollo",
-                      press: () {}),
-                  CategoryCard(
-                      image: 'assets/svg_icons/apollo.png',
-                      title: "Apollo",
-                      press: () {}),
-                  CategoryCard(
-                      image: 'assets/svg_icons/apollo.png',
-                      title: "Apollo",
-                      press: () {}),
-                  CategoryCard(
-                      image: 'assets/svg_icons/apollo.png',
-                      title: "Apollo",
-                      press: () {}),
-                  CategoryCard(
-                      image: 'assets/svg_icons/apollo.png',
-                      title: "Apollo",
-                      press: () {}),
-                ],
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
