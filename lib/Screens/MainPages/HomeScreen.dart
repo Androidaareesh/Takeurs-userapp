@@ -14,6 +14,7 @@ import 'package:takeurs_userapp/Widgets/Upcoming.dart';
 import 'package:takeurs_userapp/widgets/videoplayer.dart';
 import '../../Widgets/Categories.dart';
 import '../../Widgets/custom_row_text.dart';
+import '../../models/frontbanner.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -104,7 +105,7 @@ class _HomeScreenState extends State<HomeScreen> {
             Padding(
               padding: const EdgeInsets.only(
                   left: 20, right: 20, top: 20, bottom: 20),
-              child: Container(
+              child: SizedBox(
                 height: 42,
                 child: TextFormField(
                   cursorColor: primaryColor,
@@ -134,16 +135,16 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Container(
                     decoration: BoxDecoration(
                         color: white, borderRadius: BorderRadius.circular(8)),
-                    child: Image.asset(
-                      url,
-                      fit: BoxFit.fill,
-                    ),
+                    child: const FrontBanner(discount: '10% OFF',
+                     name: 'Strawberry',
+                      image: 'assets/svg_icons/strawberry.png',
+                       )
                   ),
                 );
               }).toList(),
               options: CarouselOptions(
                 height: 200.0,
-                viewportFraction: 1,
+                viewportFraction: 0.9,
                 autoPlay: true,
                 enlargeCenterPage: false,
                 onPageChanged: (index, reason) {

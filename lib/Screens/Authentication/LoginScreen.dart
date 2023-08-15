@@ -51,7 +51,7 @@ class _LoginPageState extends State<LoginPage> {
               const SizedBox(
                 height: 32,
               ),
-              Container(
+              SizedBox(
                 height: 54,
                 child: TextFormField(
                   decoration: InputDecoration(
