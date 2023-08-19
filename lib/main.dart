@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:takeurs_userapp/Screens/BottomNavigation.dart';
-import 'package:takeurs_userapp/Screens/Authentication/OTP.dart';
-import 'package:takeurs_userapp/Screens/Authentication/LoginScreen.dart';
-
-import 'Screens/WelcomPage.dart';
+import 'package:takeurs_userapp/Splashscreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,7 +18,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         // useMaterial3: true,
       ),
-      home: const BottomNavigation(),
+      home: const SplashScreen(),
     );
   }
 }

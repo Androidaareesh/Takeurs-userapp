@@ -133,13 +133,13 @@ class _HomeScreenState extends State<HomeScreen> {
                 return Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 8.0),
                   child: Container(
-                    decoration: BoxDecoration(
-                        color: white, borderRadius: BorderRadius.circular(8)),
-                    child: const FrontBanner(discount: '10% OFF',
-                     name: 'Strawberry',
-                      image: 'assets/svg_icons/strawberry.png',
-                       )
-                  ),
+                      decoration: BoxDecoration(
+                          color: white, borderRadius: BorderRadius.circular(8)),
+                      child: const FrontBanner(
+                        discount: '10% OFF',
+                        name: 'Strawberry',
+                        image: 'assets/svg_icons/strawberry.png',
+                      )),
                 );
               }).toList(),
               options: CarouselOptions(
@@ -302,18 +302,19 @@ class _HomeScreenState extends State<HomeScreen> {
 
             //  Video
 
-            Padding(
-              padding: const EdgeInsets.only(left: 20, right: 20, bottom: 18),
-              child: Container(
-                width: double.infinity,
-                height: 400,
-                decoration: BoxDecoration(
-                    color: primaryColor,
-                    borderRadius: BorderRadius.circular(50),
-                    ),
-                    child: const VideoPlayerWidget( videoUrl: 'https://youtu.be/9h2bKsJ7j_c'),
-              ),
-            ),
+            // Padding(
+            //   padding: const EdgeInsets.only(left: 20, right: 20, bottom: 18),
+            //   child: Container(
+            //     width: double.infinity,
+            //     height: 400,
+            //     decoration: BoxDecoration(
+            //       color: primaryColor,
+            //       borderRadius: BorderRadius.circular(50),
+            //     ),
+            //     child: const VideoPlayerWidget(
+            //         videoUrl: 'https://youtu.be/9h2bKsJ7j_c'),
+            //   ),
+            // ),
             // const BigOne(),
 
             // TopOffers
