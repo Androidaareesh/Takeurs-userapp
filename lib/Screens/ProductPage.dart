@@ -40,9 +40,9 @@ class _ProductPageState extends State<ProductPage> {
 
               Positioned(
                 left: 30,
-                top: 400,
+                top: 380,
                 child: Container(
-                  height: 200,
+                  height: 350,
                   width: 350,
                   decoration: BoxDecoration(
                     color: Colors.white,
@@ -50,8 +50,9 @@ class _ProductPageState extends State<ProductPage> {
                     border: Border.all(width: 1,color: Colors.grey.shade300)
                   ),
                   child:  Padding(
-                    padding: EdgeInsets.only(top: 20,left: 20,right: 20),
+                    padding: const EdgeInsets.only(top: 20,left: 20,right: 20),
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         const Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -77,9 +78,49 @@ class _ProductPageState extends State<ProductPage> {
                       ),
                        ],
                        ),
-                       SizedBox(
-                        height: 50,
-                       ),
+                  const Column(
+                 crossAxisAlignment: CrossAxisAlignment.stretch,
+                 children: [
+                  Text(
+                    "Descriptions",
+                    textAlign: TextAlign.start,
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    "A strawberry is both a low-growing, flowering plant and also the name of the fruit that it produces. Strawberries are soft, sweet, bright red berries. They're also delicious. Strawberries have tiny edible seeds, which grow all over their surface.",
+                    textAlign: TextAlign.start,
+                  )
+                ],
+              ),
+              const SizedBox(
+                      height: 10,
+                    ),
+                   const Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                     Row(
+                       children: [
+                         Text("Old price:80",style:
+                              TextStyle(fontSize: 28, 
+                              fontWeight: FontWeight.bold),),
+                              Icon(Icons.currency_rupee)
+                       ],
+                     ),
+                    Row(
+                      children: [
+                        Text("New price:50",style:
+                              TextStyle(fontSize: 28, 
+                              fontWeight: FontWeight.bold),),
+                              Icon(Icons.currency_rupee)
+                      ],
+                    ),
+                   ],),
+                       const SizedBox(
+                      height: 10,
+                    ),
                   CustomButton(
                borderRadius: 50,
                  buttonclr: primaryColor,

@@ -112,8 +112,7 @@ flutter:
     - assets/svg_icons/kauvery.png
     - assets/svg_icons/parvathy.png
     - assets/svg_icons/equipment.png
-    - assets/svg_icons/Scope.png
-    
+    - assets/svg_icons/Scope.png    
     - assets/svg_icons/microscope.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
