@@ -104,7 +104,10 @@ flutter:
     - assets/svg_icons/i perfume.png
     - assets/svg_icons/apollo.png 
     - assets/svg_icons/01.jpg 
-    
+    - assets\svg_icons\heartbeat.png
+    - assets\svg_icons\grocery.png
+    - assets/svg_icons/computer-chip.png
+    - assets/svg_icons/cutlery.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

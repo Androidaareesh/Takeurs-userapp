@@ -9,7 +9,7 @@ class Categories extends StatelessWidget {
 
   List<Map<String, dynamic>> savedProducts = [
     {
-      "img": "assets/svg_icons/health11.png",
+      "img": "assets/svg_icons/heartbeat.png",
       "itemName": "Health",
     },
     {
@@ -17,19 +17,19 @@ class Categories extends StatelessWidget {
       "itemName": "Spa",
     },
     {
-      "img": "assets/svg_icons/milk.png",
+      "img": "assets/svg_icons/grocery.png",
       "itemName": "Groceries",
     },
     {
       "img": "assets/svg_icons/shop.png",
-      "itemName": "Super Market",
+      "itemName": "Super\nMarket",
     },
     {
-      "img": "assets/svg_icons/chip.png",
+      "img": "assets/svg_icons/computer-chip.png",
       "itemName": "Hardware",
     },
     {
-      "img": "assets/svg_icons/food.png",
+      "img": "assets/svg_icons/cutlery.png",
       "itemName": "Restaurants",
     },
     {
@@ -53,7 +53,7 @@ class Categories extends StatelessWidget {
     //   "itemName": "Sports / Gym",
     // },
     {
-      "img": "assets/svg_icons/more.png",
+      "img": "assets/svg_icons/heartbeat.png",
       "itemName": "More",
     },
   ];
