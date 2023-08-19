@@ -13,9 +13,9 @@ class HealthCategories extends StatefulWidget {
 class _HealthCategoriesState extends State<HealthCategories> {
   final List<String> _brandNearbyList = [
     'assets/svg_icons/apollo.png',
-    'assets/svg_icons/apollo.png',
-    'assets/svg_icons/apollo.png',
-    'assets/svg_icons/apollo.png',
+    'assets/svg_icons/chennai.png',
+    'assets/svg_icons/kauvery.png',
+    'assets/svg_icons/parvathy.png',
     'assets/svg_icons/apollo.png',
     'assets/svg_icons/apollo.png',
     'assets/svg_icons/apollo.png',
@@ -47,13 +47,13 @@ class _HealthCategoriesState extends State<HealthCategories> {
                           children: [
                             CircleAvatar(
                               radius: 40,
-                              backgroundColor: grey,
+                              backgroundColor: Colors.white,
                               child: Image.asset(_brandNearbyList[index]),
                             ),
                             const SizedBox(
                               height: 10,
                             ),
-                            const Text("Apollo\nHospital")
+                            const Text("Hospitals")
                           ],
                         ),
                       ],
@@ -64,12 +64,31 @@ class _HealthCategoriesState extends State<HealthCategories> {
           const SizedBox(
             height: 10,
           ),
-          Padding(
-            padding: const EdgeInsets.only(left: 20),
-            child: const Text(
-              "Hospitals...",
-              style: TextStyle(fontSize: 24,
-              fontWeight: FontWeight.bold),
+          const Padding(
+            padding: EdgeInsets.only(left: 20,right: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "Products",
+                  style: TextStyle(fontSize: 24,
+                  fontWeight: FontWeight.bold),
+                ),
+                 SizedBox(
+                  width: 5,
+                ),
+                Row(
+                  children: [
+                    Icon(Icons.list_outlined),
+                    SizedBox(
+                      width: 5,
+                    ),
+                    Icon(Icons.grid_view),
+                
+                  ],
+                ),
+                
+              ],
             ),
           ),
           const SizedBox(
@@ -83,36 +102,36 @@ class _HealthCategoriesState extends State<HealthCategories> {
               mainAxisSpacing: 30,
               children: [
                 CategoryCard(
-                    image: 'assets/svg_icons/apollo.png',
-                    title: "Apollo",
+                    image: 'assets/svg_icons/equipment.png',
+                    title: " Pharmaceutical\n drug",
                     press: () {}),
                 CategoryCard(
-                    image: 'assets/svg_icons/apollo.png',
-                    title: "Apollo",
+                    image: 'assets/svg_icons/Scope.png',
+                    title: "SethoScope",
                     press: () {}),
                 CategoryCard(
-                    image: 'assets/svg_icons/apollo.png',
-                    title: "Apollo",
+                    image: 'assets/svg_icons/Scope.png',
+                    title: "SethoScope",
                     press: () {}),
                 CategoryCard(
-                    image: 'assets/svg_icons/apollo.png',
-                    title: "Apollo",
+                    image: 'assets/svg_icons/microscope.png',
+                    title: "MicroScope",
+                    press: () {}),
+               CategoryCard(
+                    image: 'assets/svg_icons/equipment.png',
+                    title: " Pharmaceutical\n drug",
                     press: () {}),
                 CategoryCard(
-                    image: 'assets/svg_icons/apollo.png',
-                    title: "Apollo",
+                    image: 'assets/svg_icons/Scope.png',
+                    title: "SethoScope",
                     press: () {}),
                 CategoryCard(
-                    image: 'assets/svg_icons/apollo.png',
-                    title: "Apollo",
+                    image: 'assets/svg_icons/Scope.png',
+                    title: "SethoScope",
                     press: () {}),
                 CategoryCard(
-                    image: 'assets/svg_icons/apollo.png',
-                    title: "Apollo",
-                    press: () {}),
-                CategoryCard(
-                    image: 'assets/svg_icons/apollo.png',
-                    title: "Apollo",
+                    image: 'assets/svg_icons/microscope.png',
+                    title: "MicroScope",
                     press: () {}),
               ],
             ),

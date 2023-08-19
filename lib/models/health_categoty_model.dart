@@ -55,7 +55,7 @@ class CategoryCard extends StatelessWidget {
                     children: [
                       Text(title,
                           style: const TextStyle(
-                              fontSize: 24, color: Colors.black)),
+                              fontSize: 20, color: Colors.black)),
                       ClipRRect(
                         borderRadius: BorderRadius.circular(50),
                         child: Container(

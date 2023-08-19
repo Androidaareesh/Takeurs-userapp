@@ -36,7 +36,7 @@ class _FavouritesState extends State<Favourites> {
           itemBuilder: (context, index) {
             final product = products[index];
             return Padding(
-              padding: const EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(10.0),
               child: InkWell(
                 onTap: () {
                   Navigator.push(
@@ -49,8 +49,12 @@ class _FavouritesState extends State<Favourites> {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(20),
                   child: Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(width:1,color: Colors.grey.shade300),
+                      color: Colors.white,
+                    ),
                     height: 100,
-                    color: grey,
+                    
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -61,9 +65,13 @@ class _FavouritesState extends State<Favourites> {
                               ClipRRect(
                                 borderRadius: BorderRadius.circular(20),
                                 child: Container(
+                                  decoration: BoxDecoration(
+                                     color: white,
+                                    border: Border.all(width: 1,color: Colors.grey.shade300)
+                                  ),
                                     height: 70,
                                     width: 70,
-                                    color: white,
+                                   
                                     child: Image.asset(product.image)),
                               ),
                               const SizedBox(
@@ -85,16 +93,16 @@ class _FavouritesState extends State<Favourites> {
                             ],
                           ),
                         ),
-                        IconButton(
-                            onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => ProductPage(
-                                            product: product,
-                                          )));
-                            },
-                            icon: const Icon(Icons.arrow_forward))
+                        // IconButton(
+                        //     onPressed: () {
+                        //       Navigator.push(
+                        //           context,
+                        //           MaterialPageRoute(
+                        //               builder: (context) => ProductPage(
+                        //                     product: product,
+                        //                   )));
+                        //     },
+                        //     icon: const Icon(Icons.arrow_forward))
                       ],
                     ),
                   ),
