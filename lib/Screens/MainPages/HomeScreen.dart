@@ -5,6 +5,9 @@ import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:geocoding/geocoding.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:takeurs_userapp/Materials/constant.dart';
 import 'package:takeurs_userapp/Widgets/BigOne.dart';
 import 'package:takeurs_userapp/Widgets/OfferNearBy.dart';
@@ -24,6 +27,51 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  String currentAddress = 'my address';
+   late Position currentposition;
+
+  Future<Position>  _determinePosition() async {
+    bool serviceEnabled;
+    LocationPermission permission;
+
+    serviceEnabled = await Geolocator.isLocationServiceEnabled();
+    if (!serviceEnabled) {
+      Fluttertoast.showToast(msg: 'Please enable Your Location Service');
+    }
+
+    permission = await Geolocator.checkPermission();
+    if (permission == LocationPermission.denied) {
+      permission = await Geolocator.requestPermission();
+      if (permission == LocationPermission.denied) {
+        Fluttertoast.showToast(msg: 'Location permissions are denied');
+      }
+    }
+
+    if (permission == LocationPermission.deniedForever) {
+      Fluttertoast.showToast(
+          msg:
+              'Location permissions are permanently denied, we cannot request permissions.');
+    }
+
+    Position position = await Geolocator.getCurrentPosition(
+        desiredAccuracy: LocationAccuracy.high);
+
+    try {
+      List<Placemark> placemarks =
+          await placemarkFromCoordinates(position.latitude, position.longitude);
+
+      Placemark place = placemarks[0];
+
+      setState(() {
+        currentposition = position;
+        currentAddress =
+            "${place.locality}, ${place.postalCode}, ${place.country}";
+      });
+    } catch (e) {
+      print(e);
+    }
+  }
+
   bool isVisible = true;
   int _colorIndex = 0;
 
@@ -60,25 +108,29 @@ class _HomeScreenState extends State<HomeScreen> {
             const SizedBox(
               width: 6,
             ),
-            const Column(
+             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("Hello Aareesh",
+                const Text("Hello Aareesh",
                     style: TextStyle(
                         color: white,
                         fontWeight: FontWeight.bold,
                         fontSize: 14)),
                 Row(
                   children: [
-                    Text("Vadapalani, Chennai",
-                        style: TextStyle(
+                    Text(currentAddress,
+                        style: const TextStyle(
                             color: white,
                             fontWeight: FontWeight.normal,
                             fontSize: 10)),
-                    Icon(
-                      Icons.arrow_forward_ios_rounded,
-                      color: white,
-                      size: 10,
+                    
+                    IconButton(onPressed: (){
+                       _determinePosition();
+                    }, icon: const Icon(
+                        Icons.arrow_forward_ios_rounded,
+                        color: white,
+                        size: 10,
+                      ),
                     )
                   ],
                 )
