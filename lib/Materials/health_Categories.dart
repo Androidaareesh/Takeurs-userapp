@@ -71,7 +71,7 @@ class _HealthCategoriesState extends State<HealthCategories> {
               children: [
                 Text(
                   "Products",
-                  style: TextStyle(fontSize: 24,
+                  style: TextStyle(fontSize: 20,
                   fontWeight: FontWeight.bold),
                 ),
                  SizedBox(

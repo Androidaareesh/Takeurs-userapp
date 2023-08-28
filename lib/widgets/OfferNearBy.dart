@@ -2,6 +2,8 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:takeurs_userapp/Materials/constant.dart';
 
+
+
 class OffersNearMe extends StatefulWidget {
   const OffersNearMe({super.key});
 
@@ -27,10 +29,12 @@ class _OffersNearMeState extends State<OffersNearMe> {
               child: Container(
                 decoration: BoxDecoration(
                     color: white, borderRadius: BorderRadius.circular(8)),
-                child: Image.asset(
-                  url,
-                  fit: BoxFit.fill,
-                ),
+                
+                  child: 
+                  Image.asset(
+                    url,
+                    fit: BoxFit.fill,),
+                
               ),
             );
           }).toList(),

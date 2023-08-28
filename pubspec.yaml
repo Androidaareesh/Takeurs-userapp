@@ -43,6 +43,9 @@ dependencies:
   video_player: ^2.7.0
   shared_preferences: ^2.2.0
   get_storage: ^2.1.1
+  geolocator: ^10.0.0
+  geocoding: ^2.1.0
+  fluttertoast: ^8.2.2
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -90,30 +93,31 @@ flutter:
     - assets/svg_icons/flip.png
     - assets/svg_icons/father.png
     - assets/svg_icons/bigone.png
-    - assets/svg_icons/cake.png
-    - assets/svg_icons/carrot.png
-    - assets/svg_icons/chip.png
-    - assets/svg_icons/comb.png
-    - assets/svg_icons/food.png
-    - assets/svg_icons/gold.png
-    - assets/svg_icons/gym.png
-    - assets/svg_icons/spa.png
-    - assets/svg_icons/shop.png
-    - assets/svg_icons/more.png
-    - assets/svg_icons/milk.png
     - assets/svg_icons/strawberry.png
     - assets/svg_icons/Nikewatch.png
     - assets/svg_icons/i perfume.png
     - assets/svg_icons/apollo.png
     - assets/svg_icons/01.jpg
-    - assets/svg_icons/computer-chip.png
-    - assets/svg_icons/cutlery.png
     - assets/svg_icons/chennai.png
     - assets/svg_icons/kauvery.png
     - assets/svg_icons/parvathy.png
     - assets/svg_icons/equipment.png
     - assets/svg_icons/Scope.png    
     - assets/svg_icons/microscope.png
+    - assets/svg_icons/bakery.png
+    - assets/svg_icons/carrot.png
+    - assets/svg_icons/computer-chip.png
+    - assets/svg_icons/cutlery.png
+    - assets/svg_icons/gold.png
+    - assets/svg_icons/grocery.png
+    - assets/svg_icons/heartbeat.png
+    - assets/svg_icons/load.png
+    - assets/svg_icons/saloon.png
+    - assets/svg_icons/spa.png
+    - assets/svg_icons/supermarket.png
+    - assets/svg_icons/running.png
+   
+    
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

@@ -25,6 +25,10 @@ class _FrontBannerState extends State<FrontBanner> {
                 height: 171,
                 width: 341,
                 decoration: BoxDecoration(
+                  // image: const DecorationImage(
+                  //   image: AssetImage("assets/svg_icons/Gift Coupon 3.png"),
+                  //   fit: BoxFit.cover),
+                  
                   gradient: const LinearGradient(
                     //begin: Alignment.topLeft,
                         ///end: Alignment(0.8, 1),
@@ -57,10 +61,13 @@ class _FrontBannerState extends State<FrontBanner> {
                       fontWeight: FontWeight.bold,
                       color: Colors.white),),
                        const SizedBox(
-                        height: 30,
+                        height: 14,
                       ),
-                      const Text("BUY NOW>>",style: TextStyle(fontSize: 20,
-                      color: Colors.white),)
+                      Padding(
+                        padding: const EdgeInsets.only(left: 20),
+                        child: const Text("BUY NOW>>",style: TextStyle(fontSize: 20,
+                        color: Colors.white),),
+                      )
                     ],
                   ),
                 ) ,
