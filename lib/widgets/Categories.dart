@@ -21,7 +21,7 @@ class Categories extends StatelessWidget {
       "itemName": "Groceries",
     },
     {
-      "img": "assets/svg_icons/shop.png",
+      "img": "assets/svg_icons/supermarket.png",
       "itemName": "Super\nMarket",
     },
     {
@@ -36,24 +36,24 @@ class Categories extends StatelessWidget {
       "img": "assets/svg_icons/carrot.png",
       "itemName": "Green Fresh",
     },
-    // {
-    //   "img": "assets/svg_icons/comb.png",
-    //   "itemName": "Saloon",
-    // },
-    // {
-    //   "img": "assets/svg_icons/gold.png",
-    //   "itemName": "Jewellary",
-    // },
-    // {
-    //   "img": "assets/svg_icons/cake.png",
-    //   "itemName": "Bakery",
-    // },
-    // {
-    //   "img": "assets/svg_icons/gym.png",
-    //   "itemName": "Sports / Gym",
-    // },
     {
-      "img": "assets/svg_icons/heartbeat.png",
+      "img": "assets/svg_icons/saloon.png",
+      "itemName": "Saloon",
+    },
+    {
+      "img": "assets/svg_icons/gold.png",
+      "itemName": "Jewellary",
+    },
+    {
+      "img": "assets/svg_icons/bakery.png",
+      "itemName": "Bakery",
+    },
+    {
+      "img": "assets/svg_icons/running.png",
+      "itemName": "Sports / Gym",
+    },
+    {
+      "img": "assets/svg_icons/load.png",
       "itemName": "More",
     },
   ];

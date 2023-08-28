@@ -134,6 +134,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   padding: const EdgeInsets.symmetric(horizontal: 8.0),
                   child: Container(
                       decoration: BoxDecoration(
+                          
                           color: white, borderRadius: BorderRadius.circular(8)),
                       child: const FrontBanner(
                         discount: '10% OFF',
@@ -203,6 +204,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
             // BestDealsInCity
             Container(
+              height: 200,
               color: primaryColor.withAlpha(16),
               child: Column(children: [
                 const SizedBox(
