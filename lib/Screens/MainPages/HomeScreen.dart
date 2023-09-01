@@ -30,7 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
   String currentAddress = 'my address';
    late Position currentposition;
 
-  Future<Position>  _determinePosition() async {
+  Future _determinePosition() async {
     bool serviceEnabled;
     LocationPermission permission;
 
@@ -71,6 +71,7 @@ class _HomeScreenState extends State<HomeScreen> {
       print(e);
     }
   }
+  
 
   bool isVisible = true;
   int _colorIndex = 0;
@@ -126,7 +127,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     
                     IconButton(onPressed: (){
                        _determinePosition();
-                    }, icon: const Icon(
+                    }, 
+                    icon: const Icon(
                         Icons.arrow_forward_ios_rounded,
                         color: white,
                         size: 10,
