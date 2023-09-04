@@ -272,14 +272,48 @@ class _HomeScreenState extends State<HomeScreen> {
                 Padding(
                   padding:
                       const EdgeInsets.only(left: 14, right: 14, bottom: 10),
-                  child: Card(
-                    color: Colors.pink,
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(18),
-                      child: Image.asset(
-                        "assets/svg_icons/bestdeal.png",
-                      ),
+                   child: Container(
+                    height: 120,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                        color: Colors.pink,
                     ),
+                  
+                    child: const Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                       Padding(
+                         padding: EdgeInsets.only(top: 20,left: 20),
+                         child: Row(children: [
+                          Text("GET 20%",style: TextStyle(
+                            color: Colors.white,fontSize: 29
+                          ),),
+                          Text("OFF",
+                                style:
+                                    TextStyle(color: Colors.white, 
+                                    fontSize: 24),
+                              )
+                         ],),
+                       ),
+                       SizedBox(
+                        height: 10,
+                       ),
+                       Padding(
+                         padding: EdgeInsets.only(left: 20),
+                         child: Text("For Today",style: TextStyle(
+                          color: Colors.white,fontSize: 20
+                         ),),
+                       ),
+                      ],
+                    ),
+                  // Card(
+                  //   color: Colors.pink,
+                  //   child: ClipRRect(
+                  //     borderRadius: BorderRadius.circular(18),
+                  //     child: Image.asset(
+                  //       "assets/svg_icons/bestdeal.png",
+                  //     ),
+                  //   ),
                   ),
                 ),
               ]),
