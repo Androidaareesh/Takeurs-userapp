@@ -30,15 +30,47 @@ class _UpcomingState extends State<Upcoming> {
               child: Container(
                 decoration: BoxDecoration(
                     color: white, borderRadius: BorderRadius.circular(8)),
-                child: Image.asset(
-                  url,
-                  fit: BoxFit.fill,
-                ),
+                child: Container(
+                    height: 400,
+                    width: 300,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: const Color.fromARGB(255, 245, 228, 71)),
+                    child: const Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            "FATHERS",
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 169, 103, 125),
+                                fontSize: 35,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            "DAY",
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 21, 132, 222),
+                                fontSize: 32,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            "SALE",
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 21, 132, 222),
+                                fontSize: 32,
+                                fontWeight: FontWeight.bold),
+                          )
+                        ]),
+                  )
+                //  Image.asset(
+                //   url,
+                //   fit: BoxFit.fill,
+                // ),
               ),
             );
           }).toList(),
           options: CarouselOptions(
-            height: 107.0,
+            height: 200.0,
             viewportFraction: 0.8,
             autoPlay: true,
             enlargeCenterPage: false,
