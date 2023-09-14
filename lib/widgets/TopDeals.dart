@@ -12,58 +12,85 @@ class TopDeals extends StatefulWidget {
 
 class _TopDealsState extends State<TopDeals> {
   int _currentIndex = 0;
-  final List<String> _imageUrls = [
-    'assets/svg_icons/megaone.png',
-    'assets/svg_icons/megatwo.png',
-    'assets/svg_icons/megaone.png',
+  final List _imageUrls = [
+    {
+      "img": "assets/images/Topdeals 01.png",
+      "pngimg": "assets/images/cake.png",
+      "title": "Cup Cakes",
+      "discription": "2 cakes for couples",
+    },
+    {
+      "img": "assets/images/Topdeals 02.png",
+      "pngimg": "assets/images/smarthome.png",
+      "title": "Home Appliance",
+      "discription": "Smarthome systems",
+    },
+    {
+      "img": "assets/images/Topdeals 03.png",
+      "pngimg": "assets/svg_icons/Nikewatch.png",
+      "title": "Nike watches",
+      "discription": "Booooooooooooooom",
+    }
   ];
   @override
   Widget build(BuildContext context) {
     return CarouselSlider(
       items: _imageUrls.map((url) {
-        return Container(
-          decoration: BoxDecoration(
-              color: white, borderRadius: BorderRadius.circular(8)),
-          child:Container(
-            height: 300,
-            width: 300,
-            decoration:  BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              color: const Color.fromARGB(255, 245, 228, 71)
+        return Stack(
+          children: [
+            Card(
+              elevation: 0,
+              color: Colors.transparent,
+              child: Image.asset(
+                url['img'],
+                fit: BoxFit.cover,
+              ),
             ),
-            child: const Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                 Text("MEGA",
-                      style: TextStyle(
-                        color: Color.fromARGB(255, 169, 103, 125),
-                         fontSize: 35,
-                       fontWeight: FontWeight.bold),
+            Positioned(
+                left: 20,
+                top: 20,
+                right: 20,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          url['title'],
+                          style: const TextStyle(
+                              color: white,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        const SizedBox(
+                          height: 6,
+                        ),
+                        Text(
+                          url['discription'],
+                          style: const TextStyle(
+                              color: white,
+                              fontSize: 12,
+                              fontWeight: FontWeight.w400),
+                        ),
+                      ],
                     ),
-                 Text("SALE",style: TextStyle(
-                  color: Color.fromARGB(255, 21, 132, 222),
-                  fontSize: 32,
-                  fontWeight: FontWeight.bold
-                 ),)
-            ]),
-          )
-          // Image.asset(
-          //   url,
-          //   fit: BoxFit.fill,
-          // ),
+                    Flexible(
+                      child: SizedBox(
+                        height: 100,
+                        child: Image.asset(
+                          url['pngimg'],
+                        ),
+                      ),
+                    ),
+                  ],
+                ))
+          ],
         );
       }).toList(),
-      options: CarouselOptions(
-        height: 108.0,
-        viewportFraction: 0.8,
-        autoPlay: true,
-        enlargeCenterPage: false,
-        onPageChanged: (index, reason) {
-          setState(() {
-            _currentIndex = index;
-          });
-        },
-      ),
+      options:
+          CarouselOptions(viewportFraction: 0.8, autoPlay: true, height: 140),
     );
   }
 }

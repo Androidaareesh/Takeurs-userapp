@@ -71,45 +71,74 @@ class Categories extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GridView.builder(
-        itemCount: savedProducts.length,
-        physics: const NeverScrollableScrollPhysics(),
-        shrinkWrap: true,
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 4,
-          crossAxisSpacing: 2,
-          mainAxisSpacing: 2,
-        ),
-        itemBuilder: (context, index) {
-          return Padding(
-            padding: const EdgeInsets.only(left: 6.0, right: 6.0),
-            child: GestureDetector(
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: ((context) => const HealthCategories())));
-              },
-              child: Column(
-                children: [
-                  Flexible(
-                      child: Image.asset(
-                    savedProducts[index]["img"],
-                    scale: 1.1,
-                  )),
-                  const SizedBox(
-                    height: 8,
-                  ),
-                  Flexible(
-                      child: Text(
-                    savedProducts[index]["itemName"],
-                    textAlign: TextAlign.center,
-                  )),
-                ],
-              ),
+    return Column(
+      children: [
+        const Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Expanded(
+                child: Divider(
+              indent: 22,
+              endIndent: 10,
+              color: Colors.grey,
+            )),
+            Text(
+              "SHOPSBYCATEGORIES",
+              style: TextStyle(
+                  color: Colors.grey, fontSize: 16, letterSpacing: 4.0),
             ),
-          );
-        });
+            Expanded(
+                child: Divider(
+              indent: 10,
+              endIndent: 22,
+              color: Colors.grey,
+            ))
+          ],
+        ),
+        const SizedBox(
+          height: 18,
+        ),
+        GridView.builder(
+            itemCount: savedProducts.length,
+            physics: const NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 4,
+              crossAxisSpacing: 2,
+              mainAxisSpacing: 2,
+            ),
+            itemBuilder: (context, index) {
+              return Padding(
+                padding: const EdgeInsets.only(left: 6.0, right: 6.0),
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: ((context) => const HealthCategories())));
+                  },
+                  child: Column(
+                    children: [
+                      Flexible(
+                          child: Image.asset(
+                        savedProducts[index]["img"],
+                        scale: 1.1,
+                      )),
+                      const SizedBox(
+                        height: 8,
+                      ),
+                      Flexible(
+                          child: Text(
+                        savedProducts[index]["itemName"],
+                        textAlign: TextAlign.center,
+                      )),
+                    ],
+                  ),
+                ),
+              );
+            }),
+      ],
+    );
   }
 }
 
