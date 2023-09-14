@@ -14,9 +14,9 @@ class OffersNearMe extends StatefulWidget {
 class _OffersNearMeState extends State<OffersNearMe> {
   int _currentIndex = 0;
   final List<String> _imageUrls = [
-    'assets/svg_icons/thalapa.png',
-    'assets/svg_icons/dominos.png',
-    'assets/svg_icons/fastfood.png',
+    'assets/svg_icons/fastfood.jpg',
+    'assets/svg_icons/fastfood.jpg',
+    'assets/svg_icons/fastfood.jpg',
   ];
   @override
   Widget build(BuildContext context) {
