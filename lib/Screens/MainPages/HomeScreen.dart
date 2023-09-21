@@ -14,6 +14,7 @@ import 'package:takeurs_userapp/Widgets/OfferNearBy.dart';
 import 'package:takeurs_userapp/Widgets/TopDeals.dart';
 import 'package:takeurs_userapp/Widgets/TopOffers.dart';
 import 'package:takeurs_userapp/Widgets/Upcoming.dart';
+import 'package:takeurs_userapp/models/threedmodel.dart';
 import 'package:takeurs_userapp/widgets/videoplayer.dart';
 import '../../Widgets/Categories.dart';
 import '../../Widgets/custom_row_text.dart';
@@ -284,6 +285,45 @@ class _HomeScreenState extends State<HomeScreen> {
                         height: 14,
                       ),
 
+                      SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              height: 200,
+                              width: 300,
+                              child:  ThreeDModel(
+                                image: 'assets/svg_icons/kettle.png',
+                                 text: 'Electronics',),
+                            ),
+                            const SizedBox(
+                              width: 14,
+                            ),
+                             Container(
+                              height: 200,
+                              width: 300,
+                              child: const ThreeDModel(
+                                image: 'assets/svg_icons/kettle.png',
+                                text: 'Veggies',
+                              ),
+                            ),
+                            const SizedBox(
+                              width: 14,
+                            ),
+                             Container(
+                              height: 200,
+                              width: 300,
+                              child: const ThreeDModel(
+                                image: 'assets/svg_icons/kettle.png',
+                                text: 'Food',
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+
+                       
                       // ShopsByCategories
                       // Categories(),
                       // Visibility(
@@ -296,7 +336,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
                       // BestDealsInCity
                       Container(
-                        height: 200,
+                        height: 300,
                         color: primaryColor.withAlpha(8),
                         child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
