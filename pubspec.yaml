@@ -123,6 +123,7 @@ flutter:
     - assets/svg_icons/running.png
     - assets/svg_icons/kettle.png
     - assets/svg_icons/mcafe.jpg
+    - assets/svg_icons/briyani.jpg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

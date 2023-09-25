@@ -93,16 +93,7 @@ class _FavouritesState extends State<Favourites> {
                             ],
                           ),
                         ),
-                        // IconButton(
-                        //     onPressed: () {
-                        //       Navigator.push(
-                        //           context,
-                        //           MaterialPageRoute(
-                        //               builder: (context) => ProductPage(
-                        //                     product: product,
-                        //                   )));
-                        //     },
-                        //     icon: const Icon(Icons.arrow_forward))
+                       
                       ],
                     ),
                   ),
