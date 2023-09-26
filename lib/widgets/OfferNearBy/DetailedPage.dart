@@ -135,16 +135,16 @@ class _DetailedOfferState extends State<DetailedOffer> {
                                 padding: const EdgeInsets.only(left: 8),
                                 child: Row(
                                   children: [
-                                    ClipRRect(
-                                      borderRadius: BorderRadius.circular(20),
-                                      child: Container(
-                                          decoration: BoxDecoration(
-                                             // color: white,
-                                             color: Colors.grey.shade200
-                                            ),
+                                    // ClipRRect(
+                                    //   borderRadius: BorderRadius.circular(20),
+                                    //   child: Container(
+                                    //       decoration: BoxDecoration(
+                                    //          // color: white,
+                                    //          color: Colors.grey.shade200
+                                    //         ),
                                           
-                                          child: Image.asset(product.image)),
-                                    ),
+                                    //       child: Image.asset(product.image)),
+                                    // ),
                                     const SizedBox(
                                       width: 20,
                                     ),
