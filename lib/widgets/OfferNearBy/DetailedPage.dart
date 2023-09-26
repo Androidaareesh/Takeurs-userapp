@@ -108,22 +108,26 @@ class _DetailedOfferState extends State<DetailedOffer> {
                            ]
                ),
             ),
+            const SizedBox(
+              height: 20,
+            ),
              Flexible(
                child: ListView.builder(
                   itemCount: products.length,
                   itemBuilder: (context, index) {
                     final product = products[index];
                     return Padding(
-                      padding: const EdgeInsets.all(10.0),
+                      padding: const EdgeInsets.all(20.0),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(20),
                         child: Container(
                           decoration: BoxDecoration(
-                            border: Border.all(
-                                width: 1, color: Colors.grey.shade300),
-                            color: Colors.white,
+                            image: DecorationImage(image: AssetImage(product.image),
+                            fit: BoxFit.cover),
+                            color: Colors.grey.shade200,
                           ),
                           height: 100,
+                          width: double.infinity,
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
@@ -136,11 +140,9 @@ class _DetailedOfferState extends State<DetailedOffer> {
                                       child: Container(
                                           decoration: BoxDecoration(
                                              // color: white,
-                                              border: Border.all(
-                                                  width: 1,
-                                                  color: Colors.grey.shade300)),
-                                          height: 70,
-                                          width: 70,
+                                             color: Colors.grey.shade200
+                                            ),
+                                          
                                           child: Image.asset(product.image)),
                                     ),
                                     const SizedBox(
@@ -156,11 +158,15 @@ class _DetailedOfferState extends State<DetailedOffer> {
                                           product.productname,
                                           style: const TextStyle(
                                               fontSize: 18,
+                                              color: Colors.white,
                                               fontWeight: FontWeight.w500),
                                         ),
                                         Row(
                                           children: [
-                                            Text(product.price),
+                                            Text(product.price,
+                                            style: TextStyle(
+                                              color: Colors.white
+                                            ),),
                                             const Icon(Icons.currency_rupee,size: 18,)
                                           ],
                                         ),
